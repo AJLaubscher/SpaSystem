@@ -1,0 +1,10 @@
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\bin\Debug\Spa_Information_System_Group6.exe.config
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\bin\Debug\Spa_Information_System_Group6.exe
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\bin\Debug\Spa_Information_System_Group6.pdb
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.csproj.AssemblyReference.cache
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.LogIn.resources
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.Properties.Resources.resources
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.csproj.GenerateResource.cache
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.csproj.CoreCompileInputs.cache
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.exe
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.pdb
