@@ -12,9 +12,21 @@ namespace Spa_Information_System_Group6
 {
     public partial class Main : Form
     {
+
+        public Boolean fAdministrator;
+
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            if(fAdministrator == true)
+            {
+                btnTreatments.Visible = true;
+                btnEmployees.Visible = true;
+            }
         }
     }
 }

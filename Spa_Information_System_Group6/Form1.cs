@@ -40,7 +40,7 @@ namespace Spa_Information_System_Group6
 
                 while(reader.Read())        // read through eemployee table, compare username, password and check if user is an administrator
                 {
-                    if(txbxUsername.Text == reader.GetValue(6).ToString() && txbxPassword.Text == reader.GetValue(7).ToString() )//&& reader.GetValue(5).ToString() == "True")
+                    if(txbxUsername.Text == reader.GetValue(6).ToString() && txbxPassword.Text == reader.GetValue(7).ToString()  && reader.GetValue(5).ToString() == "True")
                     {
 
                         fPremium = true;        // assign admin privilages if true
@@ -48,7 +48,7 @@ namespace Spa_Information_System_Group6
 
                         break;
                     }
-                    else if(txbxUsername.Text == reader.GetValue(6).ToString() && txbxPassword.Text == reader.GetValue(7).ToString() )//&& reader.GetValue(5).ToString() == "False")
+                    else if(txbxUsername.Text == reader.GetValue(6).ToString() && txbxPassword.Text == reader.GetValue(7).ToString() && reader.GetValue(5).ToString() == "False")
                     {
                         fPremium = false;       // ignore admin privilages
                         valid = true;           // username and password valid
@@ -72,7 +72,7 @@ namespace Spa_Information_System_Group6
                    // MessageBox.Show("Log in Success");    
                    // open main form if validation is successful
                     Main newLog = new Main();
-
+                    newLog.fAdministrator = fPremium;
                     this.Hide();
                     newLog.ShowDialog();
 
