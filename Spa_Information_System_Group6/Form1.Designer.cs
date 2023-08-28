@@ -31,8 +31,8 @@ namespace Spa_Information_System_Group6
         {
             this.UsernameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbxPassword = new System.Windows.Forms.TextBox();
+            this.txbxUsername = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -55,20 +55,20 @@ namespace Spa_Information_System_Group6
             this.label1.TabIndex = 1;
             this.label1.Text = "Password :";
             // 
-            // textBox1
+            // txbxPassword
             // 
-            this.textBox1.Location = new System.Drawing.Point(182, 187);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.txbxPassword.Location = new System.Drawing.Point(182, 187);
+            this.txbxPassword.Name = "txbxPassword";
+            this.txbxPassword.Size = new System.Drawing.Size(157, 20);
+            this.txbxPassword.TabIndex = 1;
+            this.txbxPassword.UseSystemPasswordChar = true;
             // 
-            // textBox2
+            // txbxUsername
             // 
-            this.textBox2.Location = new System.Drawing.Point(182, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(157, 20);
-            this.textBox2.TabIndex = 0;
+            this.txbxUsername.Location = new System.Drawing.Point(182, 133);
+            this.txbxUsername.Name = "txbxUsername";
+            this.txbxUsername.Size = new System.Drawing.Size(157, 20);
+            this.txbxUsername.TabIndex = 0;
             // 
             // btnLogin
             // 
@@ -78,6 +78,7 @@ namespace Spa_Information_System_Group6
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label2
             // 
@@ -96,8 +97,8 @@ namespace Spa_Information_System_Group6
             this.ClientSize = new System.Drawing.Size(469, 365);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbxUsername);
+            this.Controls.Add(this.txbxPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.UsernameLbl);
             this.Name = "LogIn";
@@ -111,8 +112,8 @@ namespace Spa_Information_System_Group6
 
         private System.Windows.Forms.Label UsernameLbl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbxPassword;
+        private System.Windows.Forms.TextBox txbxUsername;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label2;
     }
