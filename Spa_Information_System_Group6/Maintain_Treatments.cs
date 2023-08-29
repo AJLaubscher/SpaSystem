@@ -36,7 +36,7 @@ namespace Spa_Information_System_Group6
             try
             {
                 conn.Open();                                        // open connection
-                string sqlQuery = $"SELECT * FROM Treatments";      // compile select query 
+                string sqlQuery = $"SELECT * FROM Treatments WHERE Deleted LIKE '{false}'";      // compile select query 
                 command = new SqlCommand(sqlQuery, conn);
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
