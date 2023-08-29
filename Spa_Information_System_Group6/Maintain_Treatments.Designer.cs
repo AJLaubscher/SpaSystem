@@ -69,6 +69,7 @@ namespace Spa_Information_System_Group6
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewDelete = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnResetDelete = new System.Windows.Forms.Button();
             this.cmboDelete = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txbxSrchDelete = new System.Windows.Forms.TextBox();
@@ -225,6 +226,12 @@ namespace Spa_Information_System_Group6
             // 
             this.cmbx_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbx_Type.FormattingEnabled = true;
+            this.cmbx_Type.Items.AddRange(new object[] {
+            "Massages",
+            "Facials",
+            "Tinting",
+            "Wax",
+            "Gel_Overlay"});
             this.cmbx_Type.Location = new System.Drawing.Point(356, 28);
             this.cmbx_Type.Name = "cmbx_Type";
             this.cmbx_Type.Size = new System.Drawing.Size(169, 32);
@@ -324,7 +331,7 @@ namespace Spa_Information_System_Group6
             // 
             this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(24, 130);
+            this.cmbType.Location = new System.Drawing.Point(24, 118);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(154, 28);
             this.cmbType.TabIndex = 13;
@@ -334,7 +341,7 @@ namespace Spa_Information_System_Group6
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(20, 107);
+            this.label12.Location = new System.Drawing.Point(20, 95);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(124, 20);
             this.label12.TabIndex = 12;
@@ -494,6 +501,7 @@ namespace Spa_Information_System_Group6
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnResetDelete);
             this.groupBox3.Controls.Add(this.cmboDelete);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txbxSrchDelete);
@@ -505,20 +513,31 @@ namespace Spa_Information_System_Group6
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search Treatment";
             // 
+            // btnResetDelete
+            // 
+            this.btnResetDelete.Location = new System.Drawing.Point(55, 165);
+            this.btnResetDelete.Name = "btnResetDelete";
+            this.btnResetDelete.Size = new System.Drawing.Size(89, 32);
+            this.btnResetDelete.TabIndex = 14;
+            this.btnResetDelete.Text = "Reset";
+            this.btnResetDelete.UseVisualStyleBackColor = true;
+            this.btnResetDelete.Click += new System.EventHandler(this.btnResetDelete_Click);
+            // 
             // cmboDelete
             // 
             this.cmboDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmboDelete.FormattingEnabled = true;
-            this.cmboDelete.Location = new System.Drawing.Point(24, 130);
+            this.cmboDelete.Location = new System.Drawing.Point(24, 115);
             this.cmboDelete.Name = "cmboDelete";
             this.cmboDelete.Size = new System.Drawing.Size(154, 28);
             this.cmboDelete.TabIndex = 13;
+            this.cmboDelete.SelectedIndexChanged += new System.EventHandler(this.cmboDelete_SelectedIndexChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(20, 107);
+            this.label13.Location = new System.Drawing.Point(20, 92);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(124, 20);
             this.label13.TabIndex = 12;
@@ -748,5 +767,6 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnResetDelete;
     }
 }

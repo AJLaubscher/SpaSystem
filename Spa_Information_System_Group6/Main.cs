@@ -32,7 +32,7 @@ namespace Spa_Information_System_Group6
         private void btnTreatments_Click(object sender, EventArgs e)
         {
             Maintain_Treatments newTreatment = new Maintain_Treatments();
-            this.Hide();
+            //this.Hide();
             newTreatment.ShowDialog();
         }
     }
