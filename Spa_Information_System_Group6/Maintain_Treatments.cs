@@ -23,6 +23,7 @@ namespace Spa_Information_System_Group6
         public double price;
         public int duration;
         public int treat_update_ID;
+        public int treat_delete_ID;
 
 
         public Maintain_Treatments()
@@ -79,7 +80,32 @@ namespace Spa_Information_System_Group6
                 MessageBox.Show(error.Message);                      // catch error and display message
             }
         }
-            public void populateComboBox()
+        public void displayAllDelete()
+        {
+            try
+            {
+                conn.Open();                                        // open connection
+                string sqlQuery = $"SELECT * FROM Treatments";      // compile select query 
+                command = new SqlCommand(sqlQuery, conn);
+                adapt = new SqlDataAdapter();
+                ds = new DataSet();
+
+                adapt.SelectCommand = command;                      // set command for adapter
+                adapt.Fill(ds, "Treatments");                       // fill dataset
+
+                // add data to datagrid
+                dataGridViewDelete.DataSource = ds;
+                dataGridViewDelete.DataMember = "Treatments";
+
+                conn.Close();                                       // close connection
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);                      // catch error and display message
+            }
+        }
+
+        public void populateComboBox()
         {
             try
             {
@@ -298,27 +324,170 @@ namespace Spa_Information_System_Group6
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(cmbType.SelectedIndex != -1)
+            {
+                try
+                {
+                    conn.Open();
+                    // sql select statment
+                    string sqlSearch = $"SELECT * FROM Treatments WHERE _Type LIKE '%{cmbType.SelectedItem.ToString()}%'";
+                    command = new SqlCommand(sqlSearch, conn);   // execute statement against given datasource
+                    adapt = new SqlDataAdapter();
+                    ds = new DataSet();
+
+                    adapt.SelectCommand = command;              // set command to adapter
+                    adapt.Fill(ds, "Treatments");               //fill dataset
+
+                    // fill datagrid
+                    dGrdViewUptTreat.DataSource = ds;
+                    dGrdViewUptTreat.DataMember = "Treatments";
+
+                    conn.Close();                               // close connection
+                }
+                catch (SqlException error)
+                {
+                    MessageBox.Show(error.Message);             // catch error and display message
+                }
+            }
+        }
+
+        private void cmbx_Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbx_Type.SelectedIndex != -1)
+            {
+                cmbx_Type.SelectedItem.ToString();
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if(cmbx_Type.SelectedIndex != -1)
+            {
+                if(txbxNameAdd.Text != "")
+                {
+                    if(double.TryParse(txbxPriceAdd.Text, out price))
+                    {
+                        if(int.TryParse(txbxDurationAdd.Text, out duration))
+                        {
+                            try
+                            {
+                                conn.Open();                                                 // open connection
+
+                                // compile query string by retieving values from instance
+                                string sqlInsert = $"INSERT INTO Treatments Values('{cmbx_Type.SelectedIndex.ToString()}', '{txbxNameAdd.Text}', {txbxPriceAdd.Text}, {txbxDurationAdd.Text}, '{false}')";
+
+                                command = new SqlCommand(sqlInsert, conn);                   //execute sql statement 
+                                adapt = new SqlDataAdapter();
+
+                                adapt.InsertCommand = command;                              // set command for adapter
+                                adapt.InsertCommand.ExecuteNonQuery();                      // execute command
+
+                                conn.Close();                                               // close connection
+                                MessageBox.Show("New treatment successfully added");            // notify user if insert was successful 
+                                displayAll();                                               // refresh datagrid to display updated data
+
+                            }
+                            catch (SqlException error)
+                            {
+                                MessageBox.Show(error.Message);                 // catch error and display message
+                            }
+                        }
+                        else
+                        {
+                            errorProviderTreatments.SetError(txbxDurationAdd, "Enter the duration for the treatment");
+                            txbxDurationAdd.Text = "";
+                            txbxDurationAdd.Focus();
+                        }
+
+                    }
+                    else
+                    {
+                        errorProviderTreatments.SetError(txbxPriceAdd, "Enter a price for the treatment");
+                        txbxPriceAdd.Text = "";
+                        txbxPriceAdd.Focus();
+                    }
+                }
+                else
+                {
+                    errorProviderTreatments.SetError(txbxNameAdd, "Enter the treatment name");
+                    txbxNameAdd.Text = "";
+                    txbxNameAdd.Focus();
+                }
+            }
+            else
+            {
+                errorProviderTreatments.SetError(cmbx_Type, "Select the type of Treatment");
+            }
+        }
+
+        private void dataGridViewDelete_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;         // get the selected row index
+
+                DataGridViewRow row = this.dGrdViewUptTreat.Rows[index];  // cast collum values of row to variable
+
+
+                treat_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
+
+                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                lblType_Del.Text = row.Cells[1].Value.ToString();
+                lblName_Del.Text = row.Cells[2].Value.ToString();
+                lblPrice_Del.Text = row.Cells[3].Value.ToString();
+                lblDur_Del.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();        // open connection
+
+                // compile query string by retieving values from instance
+                string sqlUpdate = $"UPDATE Treatments SET Deleted = '{true}' WHERE Treatment_ID LIKE {treat_delete_ID}";
+
+                command = new SqlCommand(sqlUpdate, conn);          //execute sql statement 
+                adapt = new SqlDataAdapter();
+
+                adapt.UpdateCommand = command;                      // set command for adapter
+                adapt.UpdateCommand.ExecuteNonQuery();              // execute command
+
+                conn.Close();                                       // close connection
+                MessageBox.Show("Succesfully updated record");      // notify user if update was successful
+                //displayAllDelete();                                       // refresh datagrid to display updated record
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);                     // catch error and display message
+            }
+        }
+
+        private void txbxSrchDelete_TextChanged(object sender, EventArgs e)
+        {
             try
             {
                 conn.Open();
                 // sql select statment
-                string sqlSearch = $"SELECT * FROM Treatments WHERE _Type LIKE '%{cmbType.SelectedItem.ToString()}%'";
-                command = new SqlCommand(sqlSearch, conn);   // execute statement against given datasource
+                string sqlSearch = $"SELECT * FROM Treatments WHERE Name LIKE '%{txbxSrchDelete.Text}%'";
+                command = new SqlCommand(sqlSearch, conn);              // execute statement against given datasource
                 adapt = new SqlDataAdapter();
                 ds = new DataSet();
 
-                adapt.SelectCommand = command;              // set command to adapter
-                adapt.Fill(ds, "Treatments");               //fill dataset
+                adapt.SelectCommand = command;                           // set command to adapter
+                adapt.Fill(ds, "Treatments");                            //fill dataset
 
                 // fill datagrid
-                dGrdViewUptTreat.DataSource = ds;
-                dGrdViewUptTreat.DataMember = "Treatments";
+                dataGridViewDelete.DataSource = ds;
+                dataGridViewDelete.DataMember = "Treatments";
 
-                conn.Close();                               // close connection
+                conn.Close();                                   // close connection
             }
             catch (SqlException error)
             {
-                MessageBox.Show(error.Message);             // catch error and display message
+                MessageBox.Show(error.Message);                 // catch error and display message
             }
         }
     }

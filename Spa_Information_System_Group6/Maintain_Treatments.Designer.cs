@@ -41,10 +41,10 @@ namespace Spa_Information_System_Group6
             this.dataGridViewAllTreatments = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbx_Type = new System.Windows.Forms.ComboBox();
+            this.txbxDurationAdd = new System.Windows.Forms.TextBox();
+            this.txbxPriceAdd = new System.Windows.Forms.TextBox();
+            this.txbxNameAdd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,6 +67,22 @@ namespace Spa_Information_System_Group6
             this.label9 = new System.Windows.Forms.Label();
             this.dGrdViewUptTreat = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridViewDelete = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txbxSrchDelete = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblDur_Del = new System.Windows.Forms.Label();
+            this.lblName_Del = new System.Windows.Forms.Label();
+            this.lblPrice_Del = new System.Windows.Forms.Label();
+            this.lblType_Del = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.errorProviderTreatments = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlTreatments.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -77,6 +93,10 @@ namespace Spa_Information_System_Group6
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGrdViewUptTreat)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelete)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTreatments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,10 +195,10 @@ namespace Spa_Information_System_Group6
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnAdd);
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.textBox3);
-            this.tabPage2.Controls.Add(this.textBox2);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.cmbx_Type);
+            this.tabPage2.Controls.Add(this.txbxDurationAdd);
+            this.tabPage2.Controls.Add(this.txbxPriceAdd);
+            this.tabPage2.Controls.Add(this.txbxNameAdd);
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label4);
@@ -199,39 +219,41 @@ namespace Spa_Information_System_Group6
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add Treatment";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // comboBox1
+            // cmbx_Type
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(356, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 32);
-            this.comboBox1.TabIndex = 7;
+            this.cmbx_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbx_Type.FormattingEnabled = true;
+            this.cmbx_Type.Location = new System.Drawing.Point(356, 28);
+            this.cmbx_Type.Name = "cmbx_Type";
+            this.cmbx_Type.Size = new System.Drawing.Size(169, 32);
+            this.cmbx_Type.TabIndex = 7;
+            this.cmbx_Type.SelectedIndexChanged += new System.EventHandler(this.cmbx_Type_SelectedIndexChanged);
             // 
-            // textBox3
+            // txbxDurationAdd
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(356, 238);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 29);
-            this.textBox3.TabIndex = 6;
+            this.txbxDurationAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxDurationAdd.Location = new System.Drawing.Point(356, 238);
+            this.txbxDurationAdd.Name = "txbxDurationAdd";
+            this.txbxDurationAdd.Size = new System.Drawing.Size(169, 29);
+            this.txbxDurationAdd.TabIndex = 6;
             // 
-            // textBox2
+            // txbxPriceAdd
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(356, 168);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 29);
-            this.textBox2.TabIndex = 5;
+            this.txbxPriceAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxPriceAdd.Location = new System.Drawing.Point(356, 168);
+            this.txbxPriceAdd.Name = "txbxPriceAdd";
+            this.txbxPriceAdd.Size = new System.Drawing.Size(169, 29);
+            this.txbxPriceAdd.TabIndex = 5;
             // 
-            // textBox1
+            // txbxNameAdd
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(356, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 29);
-            this.textBox1.TabIndex = 4;
+            this.txbxNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxNameAdd.Location = new System.Drawing.Point(356, 99);
+            this.txbxNameAdd.Name = "txbxNameAdd";
+            this.txbxNameAdd.Size = new System.Drawing.Size(169, 29);
+            this.txbxNameAdd.TabIndex = 4;
             // 
             // label6
             // 
@@ -363,7 +385,7 @@ namespace Spa_Information_System_Group6
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(154, 23);
             this.lblType.TabIndex = 13;
-            this.lblType.Text = "label13";
+            this.lblType.Text = "...";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // btnUpdate
@@ -451,12 +473,187 @@ namespace Spa_Information_System_Group6
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.dataGridViewDelete);
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(790, 420);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete Treatment";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewDelete
+            // 
+            this.dataGridViewDelete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDelete.Location = new System.Drawing.Point(27, 244);
+            this.dataGridViewDelete.Name = "dataGridViewDelete";
+            this.dataGridViewDelete.Size = new System.Drawing.Size(713, 150);
+            this.dataGridViewDelete.TabIndex = 12;
+            this.dataGridViewDelete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelete_CellContentClick);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.txbxSrchDelete);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Location = new System.Drawing.Point(27, 13);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(213, 216);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Search Treatment";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(24, 130);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(154, 28);
+            this.comboBox1.TabIndex = 13;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(20, 107);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(124, 20);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Treatment Type:";
+            // 
+            // txbxSrchDelete
+            // 
+            this.txbxSrchDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbxSrchDelete.Location = new System.Drawing.Point(24, 49);
+            this.txbxSrchDelete.Name = "txbxSrchDelete";
+            this.txbxSrchDelete.Size = new System.Drawing.Size(154, 26);
+            this.txbxSrchDelete.TabIndex = 11;
+            this.txbxSrchDelete.TextChanged += new System.EventHandler(this.txbxSrchDelete_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(20, 26);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(132, 20);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Treatment Name:";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lblDur_Del);
+            this.groupBox4.Controls.Add(this.lblName_Del);
+            this.groupBox4.Controls.Add(this.lblPrice_Del);
+            this.groupBox4.Controls.Add(this.lblType_Del);
+            this.groupBox4.Controls.Add(this.btnDelete);
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Location = new System.Drawing.Point(256, 13);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(484, 216);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Delete";
+            // 
+            // lblDur_Del
+            // 
+            this.lblDur_Del.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDur_Del.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDur_Del.Location = new System.Drawing.Point(289, 132);
+            this.lblDur_Del.Name = "lblDur_Del";
+            this.lblDur_Del.Size = new System.Drawing.Size(154, 23);
+            this.lblDur_Del.TabIndex = 16;
+            this.lblDur_Del.Text = "...";
+            this.lblDur_Del.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblName_Del
+            // 
+            this.lblName_Del.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblName_Del.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName_Del.Location = new System.Drawing.Point(34, 132);
+            this.lblName_Del.Name = "lblName_Del";
+            this.lblName_Del.Size = new System.Drawing.Size(154, 23);
+            this.lblName_Del.TabIndex = 15;
+            this.lblName_Del.Text = "...";
+            this.lblName_Del.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblPrice_Del
+            // 
+            this.lblPrice_Del.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPrice_Del.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice_Del.Location = new System.Drawing.Point(289, 52);
+            this.lblPrice_Del.Name = "lblPrice_Del";
+            this.lblPrice_Del.Size = new System.Drawing.Size(154, 23);
+            this.lblPrice_Del.TabIndex = 14;
+            this.lblPrice_Del.Text = "...";
+            this.lblPrice_Del.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblType_Del
+            // 
+            this.lblType_Del.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblType_Del.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType_Del.Location = new System.Drawing.Point(34, 52);
+            this.lblType_Del.Name = "lblType_Del";
+            this.lblType_Del.Size = new System.Drawing.Size(149, 23);
+            this.lblType_Del.TabIndex = 13;
+            this.lblType_Del.Text = "...";
+            this.lblType_Del.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(164, 174);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(141, 32);
+            this.btnDelete.TabIndex = 12;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(30, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(124, 20);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Treatment Type:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(30, 107);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(132, 20);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Treatment Name:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(285, 107);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(74, 20);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Duration:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(285, 26);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(125, 20);
+            this.label19.TabIndex = 5;
+            this.label19.Text = "Treatment Price:";
             // 
             // errorProviderTreatments
             // 
@@ -484,6 +681,12 @@ namespace Spa_Information_System_Group6
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGrdViewUptTreat)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelete)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTreatments)).EndInit();
             this.ResumeLayout(false);
 
@@ -505,10 +708,10 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dGrdViewUptTreat;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbx_Type;
+        private System.Windows.Forms.TextBox txbxDurationAdd;
+        private System.Windows.Forms.TextBox txbxPriceAdd;
+        private System.Windows.Forms.TextBox txbxNameAdd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -529,5 +732,21 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider errorProviderTreatments;
+        private System.Windows.Forms.DataGridView dataGridViewDelete;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txbxSrchDelete;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblDur_Del;
+        private System.Windows.Forms.Label lblName_Del;
+        private System.Windows.Forms.Label lblPrice_Del;
+        private System.Windows.Forms.Label lblType_Del;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }
