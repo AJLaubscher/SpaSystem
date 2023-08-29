@@ -55,6 +55,7 @@ namespace Spa_Information_System_Group6
             this.btnTreatments.Text = "Treatment Manager";
             this.btnTreatments.UseVisualStyleBackColor = true;
             this.btnTreatments.Visible = false;
+            this.btnTreatments.Click += new System.EventHandler(this.btnTreatments_Click);
             // 
             // btnClients
             // 
