@@ -154,20 +154,44 @@ namespace Spa_Information_System_Group6
                 MessageBox.Show(error.Message);                      // catch error and display message
             }
         }
+        public void populateComboBoxDlT()
+        {
+            try
+            {
+                conn.Open();                                        // open connection
+                string sqlQuery = $"SELECT _Type FROM Treatments";      // compile select query 
+                command = new SqlCommand(sqlQuery, conn);               // execute statement against given datasource
+                SqlDataReader reader;
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (!cmboDelete.Items.Contains(reader.GetValue(0)))       // ignore if item is allready in combobox (no duplication)
+                    {
+                        cmboDelete.Items.Add(reader.GetValue(0));
+                    }
+                }
+                conn.Close();                                       // close connection
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);                      // catch error and display message
+            }
+        }
 
         private void Maintain_Treatments_Load(object sender, EventArgs e)
-        {
+        {   // call when loading form
             displayAll();
             populateComboBox();
-            displayAllUpdate();
-            populateComboBoxUpd();
         }
 
         private void tabControlTreatments_SelectedIndexChanged(object sender, EventArgs e)
         {
             displayAll();   // call when index of tab changes
             populateComboBox();
-
+            displayAllUpdate();
+            populateComboBoxUpd();
+            populateComboBoxDlT();
         }
 
         private void textBoxSearchTreatments_TextChanged(object sender, EventArgs e)

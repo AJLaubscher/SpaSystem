@@ -69,7 +69,7 @@ namespace Spa_Information_System_Group6
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridViewDelete = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmboDelete = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txbxSrchDelete = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -494,7 +494,7 @@ namespace Spa_Information_System_Group6
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cmboDelete);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txbxSrchDelete);
             this.groupBox3.Controls.Add(this.label14);
@@ -505,14 +505,14 @@ namespace Spa_Information_System_Group6
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search Treatment";
             // 
-            // comboBox1
+            // cmboDelete
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 130);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 28);
-            this.comboBox1.TabIndex = 13;
+            this.cmboDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmboDelete.FormattingEnabled = true;
+            this.cmboDelete.Location = new System.Drawing.Point(24, 130);
+            this.cmboDelete.Name = "cmboDelete";
+            this.cmboDelete.Size = new System.Drawing.Size(154, 28);
+            this.cmboDelete.TabIndex = 13;
             // 
             // label13
             // 
@@ -734,7 +734,7 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.ErrorProvider errorProviderTreatments;
         private System.Windows.Forms.DataGridView dataGridViewDelete;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmboDelete;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txbxSrchDelete;
         private System.Windows.Forms.Label label14;
