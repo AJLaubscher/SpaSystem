@@ -253,6 +253,10 @@ namespace Spa_Information_System_Group6
         private void btnDisplayAll_Click(object sender, EventArgs e)
         {
             displayAll();       // method to display datagrid in view all tab, refresh the datagrid after a search
+
+            // reset search box
+            txbxSearchTreatments.Text = "";
+            //cmboBoxTeatments.SelectedIndex = -1;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)            // update Treatment record on button click
@@ -313,21 +317,7 @@ namespace Spa_Information_System_Group6
 
         private void dGrdViewUptTreat_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                int index = e.RowIndex;         // get the selected row index
-
-                DataGridViewRow row = this.dGrdViewUptTreat.Rows[index];  // cast collum values of row to variable
-
-
-                treat_update_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
-
-                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
-                lblType.Text = row.Cells[1].Value.ToString();
-                txbxName.Text = row.Cells[2].Value.ToString();
-                txbxPrice.Text = row.Cells[3].Value.ToString();
-                txbxDuration.Text = row.Cells[4].Value.ToString();
-            }
+            // use cellClick instead. this causes issues
         }
 
         private void txbxSrchName_TextChanged(object sender, EventArgs e)       // search treatment name on update tab
@@ -462,26 +452,9 @@ namespace Spa_Information_System_Group6
             }
         }
 
-
-
-        // selects record, populate labels to indicate selected field and pass Primary key ID to the variable used to update the record
-        private void dataGridViewDelete_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        private void dataGridViewDelete_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                int index = e.RowIndex;         // get the selected row index
-
-                DataGridViewRow row = this.dataGridViewDelete.Rows[index];  // cast collum values of row to variable
-
-
-                treat_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
-
-                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
-                lblType_Del.Text = row.Cells[1].Value.ToString();
-                lblName_Del.Text = row.Cells[2].Value.ToString();
-                lblPrice_Del.Text = row.Cells[3].Value.ToString();
-                lblDur_Del.Text = row.Cells[4].Value.ToString();
-            }
+            // used cellClick instead of cellContentClick, CellcontentClick is not efficient
         }
 
         private void btnDelete_Click(object sender, EventArgs e)       // Deleting a record
@@ -574,10 +547,56 @@ namespace Spa_Information_System_Group6
         {
             displayAllDelete();     // reset searches
 
-            // clear the search box and combobox
+            // clear the search box 
             txbxSrchDelete.Text = "";
-            cmboDelete.SelectedIndex = -1;
 
+        }
+
+        private void btnResetUpdate_Click(object sender, EventArgs e)
+        {
+            displayAllUpdate();     // reset searches
+
+            // clear the search box 
+            txbxSrchName.Text = "";
+        }
+
+        // selects record, populate labels to indicate selected field and pass Primary key ID to the variable used to update the record
+        private void dataGridViewDelete_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;         // get the selected row index
+
+                DataGridViewRow row = this.dataGridViewDelete.Rows[index];  // cast collum values of row to variable
+
+
+                treat_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
+
+                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                lblType_Del.Text = row.Cells[1].Value.ToString();
+                lblName_Del.Text = row.Cells[2].Value.ToString();
+                lblPrice_Del.Text = row.Cells[3].Value.ToString();
+                lblDur_Del.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void dGrdViewUptTreat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;         // get the selected row index
+
+                DataGridViewRow row = this.dGrdViewUptTreat.Rows[index];  // cast collum values of row to variable
+
+
+                treat_update_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
+
+                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                lblType.Text = row.Cells[1].Value.ToString();
+                txbxName.Text = row.Cells[2].Value.ToString();
+                txbxPrice.Text = row.Cells[3].Value.ToString();
+                txbxDuration.Text = row.Cells[4].Value.ToString();
+            }
         }
     }
 }

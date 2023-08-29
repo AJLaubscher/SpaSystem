@@ -85,6 +85,7 @@ namespace Spa_Information_System_Group6
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.errorProviderTreatments = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnResetUpdate = new System.Windows.Forms.Button();
             this.tabControlTreatments.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxSearchTreatments.SuspendLayout();
@@ -187,6 +188,7 @@ namespace Spa_Information_System_Group6
             // 
             // dataGridViewAllTreatments
             // 
+            this.dataGridViewAllTreatments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAllTreatments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAllTreatments.Location = new System.Drawing.Point(15, 206);
             this.dataGridViewAllTreatments.Name = "dataGridViewAllTreatments";
@@ -316,6 +318,7 @@ namespace Spa_Information_System_Group6
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnResetUpdate);
             this.groupBox2.Controls.Add(this.cmbType);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txbxSrchName);
@@ -471,11 +474,13 @@ namespace Spa_Information_System_Group6
             // 
             // dGrdViewUptTreat
             // 
+            this.dGrdViewUptTreat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGrdViewUptTreat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGrdViewUptTreat.Location = new System.Drawing.Point(29, 239);
             this.dGrdViewUptTreat.Name = "dGrdViewUptTreat";
             this.dGrdViewUptTreat.Size = new System.Drawing.Size(713, 150);
             this.dGrdViewUptTreat.TabIndex = 0;
+            this.dGrdViewUptTreat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGrdViewUptTreat_CellClick);
             this.dGrdViewUptTreat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGrdViewUptTreat_CellContentClick);
             // 
             // tabPage4
@@ -492,11 +497,13 @@ namespace Spa_Information_System_Group6
             // 
             // dataGridViewDelete
             // 
+            this.dataGridViewDelete.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDelete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDelete.Location = new System.Drawing.Point(27, 244);
             this.dataGridViewDelete.Name = "dataGridViewDelete";
             this.dataGridViewDelete.Size = new System.Drawing.Size(713, 150);
             this.dataGridViewDelete.TabIndex = 12;
+            this.dataGridViewDelete.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelete_CellClick);
             this.dataGridViewDelete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelete_CellContentClick);
             // 
             // groupBox3
@@ -678,6 +685,16 @@ namespace Spa_Information_System_Group6
             // 
             this.errorProviderTreatments.ContainerControl = this;
             // 
+            // btnResetUpdate
+            // 
+            this.btnResetUpdate.Location = new System.Drawing.Point(55, 174);
+            this.btnResetUpdate.Name = "btnResetUpdate";
+            this.btnResetUpdate.Size = new System.Drawing.Size(89, 32);
+            this.btnResetUpdate.TabIndex = 15;
+            this.btnResetUpdate.Text = "Reset";
+            this.btnResetUpdate.UseVisualStyleBackColor = true;
+            this.btnResetUpdate.Click += new System.EventHandler(this.btnResetUpdate_Click);
+            // 
             // Maintain_Treatments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,5 +785,6 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnResetDelete;
+        private System.Windows.Forms.Button btnResetUpdate;
     }
 }
