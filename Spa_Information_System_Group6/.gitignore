@@ -1,0 +1,4 @@
+# Please dot not commit bin or obj folders as that is how you get viruses
+bin/
+obj/
+.vs/
