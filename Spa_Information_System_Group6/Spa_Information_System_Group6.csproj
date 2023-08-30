@@ -58,12 +58,15 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maintain_Clients.cs">
+<<<<<<< HEAD
+    <Compile Include="Maintain_Treatments.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maintain_Clients.Designer.cs">
-      <DependentUpon>Maintain_Clients.cs</DependentUpon>
+    <Compile Include="Maintain_Treatments.Designer.cs">
+      <DependentUpon>Maintain_Treatments.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of c16b9ea (Maintain Clients GUI Added)
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -72,9 +75,12 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maintain_Clients.resx">
-      <DependentUpon>Maintain_Clients.cs</DependentUpon>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Maintain_Treatments.resx">
+      <DependentUpon>Maintain_Treatments.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> parent of c16b9ea (Maintain Clients GUI Added)
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

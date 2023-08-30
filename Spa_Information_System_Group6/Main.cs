@@ -22,11 +22,25 @@ namespace Spa_Information_System_Group6
 
         private void Main_Load(object sender, EventArgs e)
         {
-            if(fAdministrator == true)
+            this.ControlBox = false;    //remove controls to exit form, user to use exit button created in the form
+
+            if (fAdministrator == true)
             {
                 btnTreatments.Visible = true;
                 btnEmployees.Visible = true;
             }
+        }
+
+        private void btnTreatments_Click(object sender, EventArgs e)
+        {
+            Maintain_Treatments newTreatment = new Maintain_Treatments();
+            //this.Hide();
+            newTreatment.ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); // close application
         }
     }
 }

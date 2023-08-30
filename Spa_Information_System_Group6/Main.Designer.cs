@@ -34,11 +34,13 @@ namespace Spa_Information_System_Group6
             this.btnClients = new System.Windows.Forms.Button();
             this.btnBookings = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnReports = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEmployees
             // 
-            this.btnEmployees.Location = new System.Drawing.Point(445, 279);
+            this.btnEmployees.Location = new System.Drawing.Point(318, 279);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Size = new System.Drawing.Size(157, 78);
             this.btnEmployees.TabIndex = 3;
@@ -48,17 +50,18 @@ namespace Spa_Information_System_Group6
             // 
             // btnTreatments
             // 
-            this.btnTreatments.Location = new System.Drawing.Point(200, 279);
+            this.btnTreatments.Location = new System.Drawing.Point(69, 279);
             this.btnTreatments.Name = "btnTreatments";
             this.btnTreatments.Size = new System.Drawing.Size(157, 78);
             this.btnTreatments.TabIndex = 2;
             this.btnTreatments.Text = "Treatment Manager";
             this.btnTreatments.UseVisualStyleBackColor = true;
             this.btnTreatments.Visible = false;
+            this.btnTreatments.Click += new System.EventHandler(this.btnTreatments_Click);
             // 
             // btnClients
             // 
-            this.btnClients.Location = new System.Drawing.Point(200, 128);
+            this.btnClients.Location = new System.Drawing.Point(69, 128);
             this.btnClients.Name = "btnClients";
             this.btnClients.Size = new System.Drawing.Size(157, 78);
             this.btnClients.TabIndex = 0;
@@ -67,7 +70,7 @@ namespace Spa_Information_System_Group6
             // 
             // btnBookings
             // 
-            this.btnBookings.Location = new System.Drawing.Point(445, 128);
+            this.btnBookings.Location = new System.Drawing.Point(318, 128);
             this.btnBookings.Name = "btnBookings";
             this.btnBookings.Size = new System.Drawing.Size(157, 78);
             this.btnBookings.TabIndex = 1;
@@ -78,17 +81,38 @@ namespace Spa_Information_System_Group6
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(281, 45);
+            this.label1.Location = new System.Drawing.Point(146, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Spa management system.";
             // 
+            // BtnReports
+            // 
+            this.BtnReports.Location = new System.Drawing.Point(69, 412);
+            this.BtnReports.Name = "BtnReports";
+            this.BtnReports.Size = new System.Drawing.Size(157, 78);
+            this.BtnReports.TabIndex = 5;
+            this.BtnReports.Text = "Reports Manager";
+            this.BtnReports.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(318, 412);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(157, 78);
+            this.btnExit.TabIndex = 6;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(573, 537);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.BtnReports);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.btnClients);
@@ -109,5 +133,7 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Button btnClients;
         private System.Windows.Forms.Button btnBookings;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BtnReports;
+        private System.Windows.Forms.Button btnExit;
     }
 }
