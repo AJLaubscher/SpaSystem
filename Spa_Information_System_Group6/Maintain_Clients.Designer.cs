@@ -1,7 +1,6 @@
-﻿
-namespace Spa_Information_System_Group6
+﻿namespace Spa_Information_System_Group6
 {
-    partial class Maintain_Treatments
+    partial class Maintain_Clients
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +28,6 @@ namespace Spa_Information_System_Group6
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tabControlTreatments = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnDisplayAll = new System.Windows.Forms.Button();
@@ -85,7 +83,6 @@ namespace Spa_Information_System_Group6
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.errorProviderTreatments = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlTreatments.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxSearchTreatments.SuspendLayout();
@@ -99,7 +96,6 @@ namespace Spa_Information_System_Group6
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDelete)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTreatments)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlTreatments
@@ -108,12 +104,11 @@ namespace Spa_Information_System_Group6
             this.tabControlTreatments.Controls.Add(this.tabPage2);
             this.tabControlTreatments.Controls.Add(this.tabPage3);
             this.tabControlTreatments.Controls.Add(this.tabPage4);
-            this.tabControlTreatments.Location = new System.Drawing.Point(2, 1);
+            this.tabControlTreatments.Location = new System.Drawing.Point(1, 2);
             this.tabControlTreatments.Name = "tabControlTreatments";
             this.tabControlTreatments.SelectedIndex = 0;
             this.tabControlTreatments.Size = new System.Drawing.Size(798, 446);
-            this.tabControlTreatments.TabIndex = 0;
-            this.tabControlTreatments.SelectedIndexChanged += new System.EventHandler(this.tabControlTreatments_SelectedIndexChanged);
+            this.tabControlTreatments.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -136,7 +131,6 @@ namespace Spa_Information_System_Group6
             this.btnDisplayAll.TabIndex = 2;
             this.btnDisplayAll.Text = "Display All";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
-            this.btnDisplayAll.Click += new System.EventHandler(this.btnDisplayAll_Click);
             // 
             // groupBoxSearchTreatments
             // 
@@ -157,7 +151,6 @@ namespace Spa_Information_System_Group6
             this.txbxSearchTreatments.Name = "txbxSearchTreatments";
             this.txbxSearchTreatments.Size = new System.Drawing.Size(190, 20);
             this.txbxSearchTreatments.TabIndex = 3;
-            this.txbxSearchTreatments.TextChanged += new System.EventHandler(this.textBoxSearchTreatments_TextChanged);
             // 
             // cmboBoxTeatments
             // 
@@ -166,7 +159,6 @@ namespace Spa_Information_System_Group6
             this.cmboBoxTeatments.Name = "cmboBoxTeatments";
             this.cmboBoxTeatments.Size = new System.Drawing.Size(190, 21);
             this.cmboBoxTeatments.TabIndex = 2;
-            this.cmboBoxTeatments.SelectedIndexChanged += new System.EventHandler(this.cmboBoxTeatments_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -222,7 +214,6 @@ namespace Spa_Information_System_Group6
             this.btnAdd.TabIndex = 8;
             this.btnAdd.Text = "Add Treatment";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cmbx_Type
             // 
@@ -238,7 +229,6 @@ namespace Spa_Information_System_Group6
             this.cmbx_Type.Name = "cmbx_Type";
             this.cmbx_Type.Size = new System.Drawing.Size(169, 32);
             this.cmbx_Type.TabIndex = 7;
-            this.cmbx_Type.SelectedIndexChanged += new System.EventHandler(this.cmbx_Type_SelectedIndexChanged);
             // 
             // txbxDurationAdd
             // 
@@ -338,7 +328,6 @@ namespace Spa_Information_System_Group6
             this.btnResetUpdate.TabIndex = 15;
             this.btnResetUpdate.Text = "Reset";
             this.btnResetUpdate.UseVisualStyleBackColor = true;
-            this.btnResetUpdate.Click += new System.EventHandler(this.btnResetUpdate_Click);
             // 
             // cmbType
             // 
@@ -348,7 +337,6 @@ namespace Spa_Information_System_Group6
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(154, 28);
             this.cmbType.TabIndex = 13;
-            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -367,7 +355,6 @@ namespace Spa_Information_System_Group6
             this.txbxSrchName.Name = "txbxSrchName";
             this.txbxSrchName.Size = new System.Drawing.Size(154, 26);
             this.txbxSrchName.TabIndex = 11;
-            this.txbxSrchName.TextChanged += new System.EventHandler(this.txbxSrchName_TextChanged);
             // 
             // label11
             // 
@@ -416,7 +403,6 @@ namespace Spa_Information_System_Group6
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txbxName
             // 
@@ -490,8 +476,6 @@ namespace Spa_Information_System_Group6
             this.dGrdViewUptTreat.Name = "dGrdViewUptTreat";
             this.dGrdViewUptTreat.Size = new System.Drawing.Size(713, 150);
             this.dGrdViewUptTreat.TabIndex = 0;
-            this.dGrdViewUptTreat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGrdViewUptTreat_CellClick);
-            this.dGrdViewUptTreat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGrdViewUptTreat_CellContentClick);
             // 
             // tabPage4
             // 
@@ -513,8 +497,6 @@ namespace Spa_Information_System_Group6
             this.dataGridViewDelete.Name = "dataGridViewDelete";
             this.dataGridViewDelete.Size = new System.Drawing.Size(713, 150);
             this.dataGridViewDelete.TabIndex = 12;
-            this.dataGridViewDelete.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelete_CellClick);
-            this.dataGridViewDelete.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDelete_CellContentClick);
             // 
             // groupBox3
             // 
@@ -538,7 +520,6 @@ namespace Spa_Information_System_Group6
             this.btnResetDelete.TabIndex = 14;
             this.btnResetDelete.Text = "Reset";
             this.btnResetDelete.UseVisualStyleBackColor = true;
-            this.btnResetDelete.Click += new System.EventHandler(this.btnResetDelete_Click);
             // 
             // cmboDelete
             // 
@@ -548,7 +529,6 @@ namespace Spa_Information_System_Group6
             this.cmboDelete.Name = "cmboDelete";
             this.cmboDelete.Size = new System.Drawing.Size(154, 28);
             this.cmboDelete.TabIndex = 13;
-            this.cmboDelete.SelectedIndexChanged += new System.EventHandler(this.cmboDelete_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -567,7 +547,6 @@ namespace Spa_Information_System_Group6
             this.txbxSrchDelete.Name = "txbxSrchDelete";
             this.txbxSrchDelete.Size = new System.Drawing.Size(154, 26);
             this.txbxSrchDelete.TabIndex = 11;
-            this.txbxSrchDelete.TextChanged += new System.EventHandler(this.txbxSrchDelete_TextChanged);
             // 
             // label14
             // 
@@ -649,7 +628,6 @@ namespace Spa_Information_System_Group6
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label16
             // 
@@ -691,19 +669,14 @@ namespace Spa_Information_System_Group6
             this.label19.TabIndex = 5;
             this.label19.Text = "Treatment Price:";
             // 
-            // errorProviderTreatments
-            // 
-            this.errorProviderTreatments.ContainerControl = this;
-            // 
-            // Maintain_Treatments
+            // Maintain_Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlTreatments);
-            this.Name = "Maintain_Treatments";
-            this.Text = "Maintain_Treatments";
-            this.Load += new System.EventHandler(this.Maintain_Treatments_Load);
+            this.Name = "Maintain_Clients";
+            this.Text = "Maintain_Clients";
             this.tabControlTreatments.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBoxSearchTreatments.ResumeLayout(false);
@@ -723,7 +696,6 @@ namespace Spa_Information_System_Group6
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTreatments)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -732,17 +704,14 @@ namespace Spa_Information_System_Group6
 
         private System.Windows.Forms.TabControl tabControlTreatments;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridViewAllTreatments;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.GroupBox groupBoxSearchTreatments;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDisplayAll;
+        private System.Windows.Forms.GroupBox groupBoxSearchTreatments;
         private System.Windows.Forms.TextBox txbxSearchTreatments;
         private System.Windows.Forms.ComboBox cmboBoxTeatments;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dGrdViewUptTreat;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridViewAllTreatments;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cmbx_Type;
         private System.Windows.Forms.TextBox txbxDurationAdd;
@@ -752,7 +721,9 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnResetUpdate;
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txbxSrchName;
@@ -767,9 +738,11 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ErrorProvider errorProviderTreatments;
+        private System.Windows.Forms.DataGridView dGrdViewUptTreat;
+        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridViewDelete;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnResetDelete;
         private System.Windows.Forms.ComboBox cmboDelete;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txbxSrchDelete;
@@ -784,7 +757,5 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button btnResetDelete;
-        private System.Windows.Forms.Button btnResetUpdate;
     }
 }
