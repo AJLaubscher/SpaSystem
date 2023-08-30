@@ -42,5 +42,12 @@ namespace Spa_Information_System_Group6
         {
             Application.Exit(); // close application
         }
+
+        private void btnClients_Click(object sender, EventArgs e)
+        {
+            Maintain_Clients newClient = new Maintain_Clients();
+            //this.Hide();
+            newClient.ShowDialog();
+        }
     }
 }

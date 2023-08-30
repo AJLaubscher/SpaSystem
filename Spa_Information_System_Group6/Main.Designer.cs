@@ -67,6 +67,7 @@ namespace Spa_Information_System_Group6
             this.btnClients.TabIndex = 0;
             this.btnClients.Text = "Client Manager";
             this.btnClients.UseVisualStyleBackColor = true;
+            this.btnClients.Click += new System.EventHandler(this.btnClients_Click);
             // 
             // btnBookings
             // 
