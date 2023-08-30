@@ -1,0 +1,2 @@
+# Have to have multiple gitignores as ther is a separate folder for the project
+.vs
