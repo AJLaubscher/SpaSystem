@@ -51,6 +51,7 @@ namespace Spa_Information_System_Group6
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnResetUpdate = new System.Windows.Forms.Button();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txbxSrchName = new System.Windows.Forms.TextBox();
@@ -85,7 +86,6 @@ namespace Spa_Information_System_Group6
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.errorProviderTreatments = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnResetUpdate = new System.Windows.Forms.Button();
             this.tabControlTreatments.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxSearchTreatments.SuspendLayout();
@@ -329,6 +329,16 @@ namespace Spa_Information_System_Group6
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Treatment";
+            // 
+            // btnResetUpdate
+            // 
+            this.btnResetUpdate.Location = new System.Drawing.Point(55, 174);
+            this.btnResetUpdate.Name = "btnResetUpdate";
+            this.btnResetUpdate.Size = new System.Drawing.Size(89, 32);
+            this.btnResetUpdate.TabIndex = 15;
+            this.btnResetUpdate.Text = "Reset";
+            this.btnResetUpdate.UseVisualStyleBackColor = true;
+            this.btnResetUpdate.Click += new System.EventHandler(this.btnResetUpdate_Click);
             // 
             // cmbType
             // 
@@ -684,16 +694,6 @@ namespace Spa_Information_System_Group6
             // errorProviderTreatments
             // 
             this.errorProviderTreatments.ContainerControl = this;
-            // 
-            // btnResetUpdate
-            // 
-            this.btnResetUpdate.Location = new System.Drawing.Point(55, 174);
-            this.btnResetUpdate.Name = "btnResetUpdate";
-            this.btnResetUpdate.Size = new System.Drawing.Size(89, 32);
-            this.btnResetUpdate.TabIndex = 15;
-            this.btnResetUpdate.Text = "Reset";
-            this.btnResetUpdate.UseVisualStyleBackColor = true;
-            this.btnResetUpdate.Click += new System.EventHandler(this.btnResetUpdate_Click);
             // 
             // Maintain_Treatments
             // 
