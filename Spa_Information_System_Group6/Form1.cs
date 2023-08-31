@@ -14,7 +14,11 @@ namespace Spa_Information_System_Group6
     public partial class LogIn : Form
     {
         // Global sql connection
+<<<<<<< Updated upstream
         SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-NSKM73HE\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+=======
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-H0O7SRK\SQLEXPRESS02;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+>>>>>>> Stashed changes
         SqlCommand command;
 
         // variables 
@@ -71,7 +75,7 @@ namespace Spa_Information_System_Group6
                 {
                    // MessageBox.Show("Log in Success");    
                    // open main form if validation is successful
-                    Main newLog = new Main();
+                    frmManagement newLog = new frmManagement();
                     newLog.fAdministrator = fPremium;
                     this.Hide();
                     newLog.ShowDialog();

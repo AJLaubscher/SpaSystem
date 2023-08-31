@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace Spa_Information_System_Group6
 {
-    public partial class Main : Form
+    public partial class frmManagement : Form
     {
 
         public Boolean fAdministrator;
 
-        public Main()
+        public frmManagement()
         {
             InitializeComponent();
         }
@@ -31,6 +31,7 @@ namespace Spa_Information_System_Group6
             }
         }
 
+<<<<<<< Updated upstream
         private void btnTreatments_Click(object sender, EventArgs e)
         {
             Maintain_Treatments newTreatment = new Maintain_Treatments();
@@ -48,6 +49,13 @@ namespace Spa_Information_System_Group6
             Maintain_Clients newClient = new Maintain_Clients();
             //this.Hide();
             newClient.ShowDialog();
+=======
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MaintainEmployees maintainEmployees = new MaintainEmployees();
+            maintainEmployees.Show();
+>>>>>>> Stashed changes
         }
     }
 }
