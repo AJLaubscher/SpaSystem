@@ -49,5 +49,11 @@ namespace Spa_Information_System_Group6
             //this.Hide();
             newClient.ShowDialog();
         }
+
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+            Maintain_Bookings bookingForm = new Maintain_Bookings();
+            bookingForm.ShowDialog();
+        }
     }
 }

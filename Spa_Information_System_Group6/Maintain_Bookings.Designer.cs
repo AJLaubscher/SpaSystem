@@ -33,15 +33,15 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gbSearch = new System.Windows.Forms.GroupBox();
             this.lblSearchDate = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtSearchDate = new System.Windows.Forms.TextBox();
+            this.dataGridViewAllBookings = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.chbBookingPayed = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStartTimeSearch = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSearchStartTime = new System.Windows.Forms.TextBox();
             this.chbBookingCanceled = new System.Windows.Forms.CheckBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.BookingsTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllBookings)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.gpClientInfo.SuspendLayout();
@@ -93,6 +93,7 @@
             this.btnDisplayAll.TabIndex = 0;
             this.btnDisplayAll.Text = "DisplayAll";
             this.btnDisplayAll.UseVisualStyleBackColor = true;
+            this.btnDisplayAll.Click += new System.EventHandler(this.btnDisplayAll_Click);
             // 
             // BookingsTabControl
             // 
@@ -110,7 +111,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.gbSearch);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dataGridViewAllBookings);
             this.tabPage1.Controls.Add(this.btnDisplayAll);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -142,20 +143,21 @@
             this.lblSearchDate.TabIndex = 1;
             this.lblSearchDate.Text = "Search Date :";
             // 
-            // textBox1
+            // txtSearchDate
             // 
-            this.textBox1.Location = new System.Drawing.Point(148, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtSearchDate.Location = new System.Drawing.Point(148, 22);
+            this.txtSearchDate.Name = "txtSearchDate";
+            this.txtSearchDate.Size = new System.Drawing.Size(181, 20);
+            this.txtSearchDate.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewAllBookings
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(410, 254);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewAllBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAllBookings.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewAllBookings.Name = "dataGridViewAllBookings";
+            this.dataGridViewAllBookings.ReadOnly = true;
+            this.dataGridViewAllBookings.Size = new System.Drawing.Size(410, 254);
+            this.dataGridViewAllBookings.TabIndex = 1;
             // 
             // tabPage2
             // 
@@ -196,7 +198,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(871, 384);
+            this.tabPage4.Size = new System.Drawing.Size(871, 409);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete Bookings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -213,9 +215,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtSearchStartTime);
             this.panel1.Controls.Add(this.lblStartTimeSearch);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSearchDate);
             this.panel1.Controls.Add(this.lblSearchDate);
             this.panel1.Location = new System.Drawing.Point(16, 31);
             this.panel1.Name = "panel1";
@@ -231,12 +233,12 @@
             this.lblStartTimeSearch.TabIndex = 2;
             this.lblStartTimeSearch.Text = "Search start time :";
             // 
-            // textBox2
+            // txtSearchStartTime
             // 
-            this.textBox2.Location = new System.Drawing.Point(148, 61);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtSearchStartTime.Location = new System.Drawing.Point(148, 61);
+            this.txtSearchStartTime.Name = "txtSearchStartTime";
+            this.txtSearchStartTime.Size = new System.Drawing.Size(181, 20);
+            this.txtSearchStartTime.TabIndex = 3;
             // 
             // chbBookingCanceled
             // 
@@ -536,7 +538,7 @@
             this.tabPage1.ResumeLayout(false);
             this.gbSearch.ResumeLayout(false);
             this.gbSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAllBookings)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -561,13 +563,13 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewAllBookings;
         private System.Windows.Forms.GroupBox gbSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearchDate;
         private System.Windows.Forms.Label lblSearchDate;
         private System.Windows.Forms.CheckBox chbBookingPayed;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSearchStartTime;
         private System.Windows.Forms.Label lblStartTimeSearch;
         private System.Windows.Forms.CheckBox chbBookingCanceled;
         private System.Windows.Forms.Button btnClear;

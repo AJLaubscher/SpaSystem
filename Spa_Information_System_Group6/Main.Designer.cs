@@ -77,6 +77,7 @@ namespace Spa_Information_System_Group6
             this.btnBookings.TabIndex = 1;
             this.btnBookings.Text = "Booking Manager";
             this.btnBookings.UseVisualStyleBackColor = true;
+            this.btnBookings.Click += new System.EventHandler(this.btnBookings_Click);
             // 
             // label1
             // 
