@@ -1,7 +1,7 @@
 ﻿
 namespace Spa_Information_System_Group6
 {
-    partial class frmManagement
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -40,32 +40,19 @@ namespace Spa_Information_System_Group6
             // 
             // btnEmployees
             // 
-<<<<<<< Updated upstream
             this.btnEmployees.Location = new System.Drawing.Point(318, 279);
-=======
-            this.btnEmployees.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEmployees.Location = new System.Drawing.Point(613, 348);
-            this.btnEmployees.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
->>>>>>> Stashed changes
             this.btnEmployees.Name = "btnEmployees";
-            this.btnEmployees.Size = new System.Drawing.Size(277, 197);
+            this.btnEmployees.Size = new System.Drawing.Size(157, 78);
             this.btnEmployees.TabIndex = 3;
             this.btnEmployees.Text = "Employee Manager";
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Visible = false;
-            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnTreatments
             // 
-<<<<<<< Updated upstream
             this.btnTreatments.Location = new System.Drawing.Point(69, 279);
-=======
-            this.btnTreatments.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTreatments.Location = new System.Drawing.Point(310, 348);
-            this.btnTreatments.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
->>>>>>> Stashed changes
             this.btnTreatments.Name = "btnTreatments";
-            this.btnTreatments.Size = new System.Drawing.Size(295, 197);
+            this.btnTreatments.Size = new System.Drawing.Size(157, 78);
             this.btnTreatments.TabIndex = 2;
             this.btnTreatments.Text = "Treatment Manager";
             this.btnTreatments.UseVisualStyleBackColor = true;
@@ -74,15 +61,9 @@ namespace Spa_Information_System_Group6
             // 
             // btnClients
             // 
-<<<<<<< Updated upstream
             this.btnClients.Location = new System.Drawing.Point(69, 128);
-=======
-            this.btnClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClients.Location = new System.Drawing.Point(310, 138);
-            this.btnClients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
->>>>>>> Stashed changes
             this.btnClients.Name = "btnClients";
-            this.btnClients.Size = new System.Drawing.Size(295, 200);
+            this.btnClients.Size = new System.Drawing.Size(157, 78);
             this.btnClients.TabIndex = 0;
             this.btnClients.Text = "Client Manager";
             this.btnClients.UseVisualStyleBackColor = true;
@@ -90,15 +71,9 @@ namespace Spa_Information_System_Group6
             // 
             // btnBookings
             // 
-<<<<<<< Updated upstream
             this.btnBookings.Location = new System.Drawing.Point(318, 128);
-=======
-            this.btnBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBookings.Location = new System.Drawing.Point(613, 138);
-            this.btnBookings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
->>>>>>> Stashed changes
             this.btnBookings.Name = "btnBookings";
-            this.btnBookings.Size = new System.Drawing.Size(277, 200);
+            this.btnBookings.Size = new System.Drawing.Size(157, 78);
             this.btnBookings.TabIndex = 1;
             this.btnBookings.Text = "Booking Manager";
             this.btnBookings.UseVisualStyleBackColor = true;
@@ -106,20 +81,13 @@ namespace Spa_Information_System_Group6
             // label1
             // 
             this.label1.AutoSize = true;
-<<<<<<< Updated upstream
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(146, 47);
-=======
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(335, 53);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
->>>>>>> Stashed changes
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(477, 46);
+            this.label1.Size = new System.Drawing.Size(260, 25);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Spa Management System";
+            this.label1.Text = "Spa management system.";
             // 
-<<<<<<< Updated upstream
             // BtnReports
             // 
             this.BtnReports.Location = new System.Drawing.Point(69, 412);
@@ -140,27 +108,19 @@ namespace Spa_Information_System_Group6
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Main
-=======
-            // frmManagement
->>>>>>> Stashed changes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< Updated upstream
             this.ClientSize = new System.Drawing.Size(573, 537);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.BtnReports);
-=======
-            this.ClientSize = new System.Drawing.Size(1200, 692);
->>>>>>> Stashed changes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBookings);
             this.Controls.Add(this.btnClients);
             this.Controls.Add(this.btnTreatments);
             this.Controls.Add(this.btnEmployees);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmManagement";
-            this.Text = "Spa Management System";
+            this.Name = "Main";
+            this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
