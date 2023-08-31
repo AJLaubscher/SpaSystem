@@ -1,2 +1,2 @@
-# Have to have multiple gitignores as ther is a separate folder for the project
-.vs
+.vs/
+Spa_Information_System_Group6/obj/Release/
