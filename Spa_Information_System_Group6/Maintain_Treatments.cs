@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Contexts;
 
 namespace Spa_Information_System_Group6
 {
     public partial class Maintain_Treatments : Form
     {
         // Global sql connection
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-NSKM73HE\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2999I1K;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlCommand command;
         SqlDataAdapter adapt;
         DataSet ds;
