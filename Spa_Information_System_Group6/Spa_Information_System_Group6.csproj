@@ -59,7 +59,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-<<<<<<< Updated upstream
     <Compile Include="Maintain_Clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,13 +70,11 @@
     </Compile>
     <Compile Include="Maintain_Treatments.Designer.cs">
       <DependentUpon>Maintain_Treatments.cs</DependentUpon>
-=======
     <Compile Include="MaintainEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MaintainEmployees.Designer.cs">
       <DependentUpon>MaintainEmployees.cs</DependentUpon>
->>>>>>> Stashed changes
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,16 +84,13 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< Updated upstream
     <EmbeddedResource Include="Maintain_Clients.resx">
       <DependentUpon>Maintain_Clients.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintain_Treatments.resx">
       <DependentUpon>Maintain_Treatments.cs</DependentUpon>
-=======
     <EmbeddedResource Include="MaintainEmployees.resx">
       <DependentUpon>MaintainEmployees.cs</DependentUpon>
->>>>>>> Stashed changes
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
