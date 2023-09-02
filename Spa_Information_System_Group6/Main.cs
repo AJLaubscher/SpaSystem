@@ -49,5 +49,12 @@ namespace Spa_Information_System_Group6
             //this.Hide();
             newClient.ShowDialog();
         }
+
+        private void BtnReports_Click(object sender, EventArgs e)
+        {
+            Request_Reports newReport = new Request_Reports();
+            //this.Hide();
+            newReport.ShowDialog();
+        }
     }
 }

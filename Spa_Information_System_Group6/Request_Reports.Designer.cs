@@ -30,13 +30,13 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblStartDate = new System.Windows.Forms.Label();
-            this.lblEndDate = new System.Windows.Forms.Label();
-            this.lstDisplay = new System.Windows.Forms.ListBox();
-            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
             this.btnDisplayIncome = new System.Windows.Forms.Button();
+            this.dtEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtStartDate = new System.Windows.Forms.DateTimePicker();
+            this.lstDisplay = new System.Windows.Forms.ListBox();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -67,24 +67,37 @@
             this.tabPage1.Text = "Income Per Time Period";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // btnDisplayIncome
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btnDisplayIncome.Location = new System.Drawing.Point(28, 74);
+            this.btnDisplayIncome.Name = "btnDisplayIncome";
+            this.btnDisplayIncome.Size = new System.Drawing.Size(716, 41);
+            this.btnDisplayIncome.TabIndex = 5;
+            this.btnDisplayIncome.Text = "Display income per time period";
+            this.btnDisplayIncome.UseVisualStyleBackColor = true;
+            this.btnDisplayIncome.Click += new System.EventHandler(this.btnDisplayIncome_Click);
             // 
-            // lblStartDate
+            // dtEndDate
             // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Location = new System.Drawing.Point(25, 18);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(58, 13);
-            this.lblStartDate.TabIndex = 0;
-            this.lblStartDate.Text = "Start Date:";
+            this.dtEndDate.Location = new System.Drawing.Point(461, 18);
+            this.dtEndDate.Name = "dtEndDate";
+            this.dtEndDate.Size = new System.Drawing.Size(200, 20);
+            this.dtEndDate.TabIndex = 4;
+            // 
+            // dtStartDate
+            // 
+            this.dtStartDate.Location = new System.Drawing.Point(100, 18);
+            this.dtStartDate.Name = "dtStartDate";
+            this.dtStartDate.Size = new System.Drawing.Size(200, 20);
+            this.dtStartDate.TabIndex = 3;
+            // 
+            // lstDisplay
+            // 
+            this.lstDisplay.FormattingEnabled = true;
+            this.lstDisplay.Location = new System.Drawing.Point(28, 121);
+            this.lstDisplay.Name = "lstDisplay";
+            this.lstDisplay.Size = new System.Drawing.Size(716, 264);
+            this.lstDisplay.TabIndex = 2;
             // 
             // lblEndDate
             // 
@@ -95,37 +108,24 @@
             this.lblEndDate.TabIndex = 1;
             this.lblEndDate.Text = "End Date:";
             // 
-            // lstDisplay
+            // lblStartDate
             // 
-            this.lstDisplay.FormattingEnabled = true;
-            this.lstDisplay.Location = new System.Drawing.Point(28, 121);
-            this.lstDisplay.Name = "lstDisplay";
-            this.lstDisplay.Size = new System.Drawing.Size(716, 264);
-            this.lstDisplay.TabIndex = 2;
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Location = new System.Drawing.Point(25, 18);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(58, 13);
+            this.lblStartDate.TabIndex = 0;
+            this.lblStartDate.Text = "Start Date:";
             // 
-            // dtStartDate
+            // tabPage2
             // 
-            this.dtStartDate.Location = new System.Drawing.Point(100, 18);
-            this.dtStartDate.Name = "dtStartDate";
-            this.dtStartDate.Size = new System.Drawing.Size(200, 20);
-            this.dtStartDate.TabIndex = 3;
-            // 
-            // dtEndDate
-            // 
-            this.dtEndDate.Location = new System.Drawing.Point(461, 18);
-            this.dtEndDate.Name = "dtEndDate";
-            this.dtEndDate.Size = new System.Drawing.Size(200, 20);
-            this.dtEndDate.TabIndex = 4;
-            // 
-            // btnDisplayIncome
-            // 
-            this.btnDisplayIncome.Location = new System.Drawing.Point(28, 74);
-            this.btnDisplayIncome.Name = "btnDisplayIncome";
-            this.btnDisplayIncome.Size = new System.Drawing.Size(716, 41);
-            this.btnDisplayIncome.TabIndex = 5;
-            this.btnDisplayIncome.Text = "Display income per time period";
-            this.btnDisplayIncome.UseVisualStyleBackColor = true;
-            this.btnDisplayIncome.Click += new System.EventHandler(this.btnDisplayIncome_Click);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(768, 400);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Request_Reports
             // 
