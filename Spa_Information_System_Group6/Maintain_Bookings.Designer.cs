@@ -1,6 +1,6 @@
 ﻿namespace Spa_Information_System_Group6
 {
-    partial class Maintain_Bookings
+    partial class frmMaintainBookings
     {
         /// <summary>
         /// Required designer variable.
@@ -61,7 +61,7 @@
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.lblHeading = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnSelectInformation = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -77,6 +77,31 @@
             this.txtTreatmentPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdateClear = new System.Windows.Forms.Button();
+            this.txtSearchClientName = new System.Windows.Forms.TextBox();
+            this.txtSearchEmployee = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dbGridUpdateBooking = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUpClear = new System.Windows.Forms.Button();
+            this.btnUpTreatment = new System.Windows.Forms.Button();
+            this.txtUpAmountDue = new System.Windows.Forms.TextBox();
+            this.txtUpTreatmentPrice = new System.Windows.Forms.TextBox();
+            this.txtUpEndTime = new System.Windows.Forms.TextBox();
+            this.txtUpStartTime = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.chbUpTreatmentProv = new System.Windows.Forms.CheckBox();
+            this.chbUpBookingPayed = new System.Windows.Forms.CheckBox();
+            this.chbUpBookingCancelled = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dateTimePickerUpdate = new System.Windows.Forms.DateTimePicker();
+            this.btnUpdateBooking = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.BookingsTabControl.SuspendLayout();
@@ -91,6 +116,11 @@
             this.gpTreatmentInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridUpdateBooking)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,8 +144,10 @@
             this.BookingsTabControl.Multiline = true;
             this.BookingsTabControl.Name = "BookingsTabControl";
             this.BookingsTabControl.SelectedIndex = 0;
-            this.BookingsTabControl.Size = new System.Drawing.Size(902, 498);
+            this.BookingsTabControl.Size = new System.Drawing.Size(902, 512);
             this.BookingsTabControl.TabIndex = 1;
+            this.BookingsTabControl.SelectedIndexChanged += new System.EventHandler(this.BookingsTabControl_SelectedIndexChanged);
+            this.BookingsTabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.BookingsTabControl_Selected);
             // 
             // tabPage1
             // 
@@ -125,7 +157,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(894, 472);
+            this.tabPage1.Size = new System.Drawing.Size(894, 486);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "View all Bookings";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -215,7 +247,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(894, 472);
+            this.tabPage2.Size = new System.Drawing.Size(894, 486);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Bookings";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -403,7 +435,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.txtDate);
+            this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.btnSelectInformation);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
@@ -420,13 +452,13 @@
             this.panel2.Size = new System.Drawing.Size(464, 346);
             this.panel2.TabIndex = 22;
             // 
-            // txtDate
+            // dateTimePicker1
             // 
-            this.txtDate.Location = new System.Drawing.Point(117, 13);
-            this.txtDate.Multiline = true;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(164, 24);
-            this.txtDate.TabIndex = 8;
+            this.dateTimePicker1.Location = new System.Drawing.Point(96, 10);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 21;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // btnSelectInformation
             // 
@@ -558,20 +590,259 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Controls.Add(this.dbGridUpdateBooking);
+            this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.btnUpdateBooking);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(894, 472);
+            this.tabPage3.Size = new System.Drawing.Size(894, 486);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Update Bookings";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnUpdateClear);
+            this.groupBox2.Controls.Add(this.txtSearchClientName);
+            this.groupBox2.Controls.Add(this.txtSearchEmployee);
+            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Location = new System.Drawing.Point(585, 185);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(272, 292);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search";
+            // 
+            // btnUpdateClear
+            // 
+            this.btnUpdateClear.Location = new System.Drawing.Point(6, 111);
+            this.btnUpdateClear.Name = "btnUpdateClear";
+            this.btnUpdateClear.Size = new System.Drawing.Size(260, 29);
+            this.btnUpdateClear.TabIndex = 27;
+            this.btnUpdateClear.Text = "Clear";
+            this.btnUpdateClear.UseVisualStyleBackColor = true;
+            // 
+            // txtSearchClientName
+            // 
+            this.txtSearchClientName.Location = new System.Drawing.Point(105, 61);
+            this.txtSearchClientName.Name = "txtSearchClientName";
+            this.txtSearchClientName.Size = new System.Drawing.Size(135, 20);
+            this.txtSearchClientName.TabIndex = 26;
+            // 
+            // txtSearchEmployee
+            // 
+            this.txtSearchEmployee.Location = new System.Drawing.Point(105, 21);
+            this.txtSearchEmployee.Name = "txtSearchEmployee";
+            this.txtSearchEmployee.Size = new System.Drawing.Size(135, 20);
+            this.txtSearchEmployee.TabIndex = 24;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(15, 64);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(64, 13);
+            this.label18.TabIndex = 25;
+            this.label18.Text = "Client Name";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(15, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 13);
+            this.label17.TabIndex = 24;
+            this.label17.Text = "Employee Name";
+            // 
+            // dbGridUpdateBooking
+            // 
+            this.dbGridUpdateBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dbGridUpdateBooking.Location = new System.Drawing.Point(9, 6);
+            this.dbGridUpdateBooking.Name = "dbGridUpdateBooking";
+            this.dbGridUpdateBooking.ReadOnly = true;
+            this.dbGridUpdateBooking.Size = new System.Drawing.Size(879, 166);
+            this.dbGridUpdateBooking.TabIndex = 1;
+            this.dbGridUpdateBooking.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dbGridUpdateBooking_CellClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnUpClear);
+            this.groupBox1.Controls.Add(this.btnUpTreatment);
+            this.groupBox1.Controls.Add(this.txtUpAmountDue);
+            this.groupBox1.Controls.Add(this.txtUpTreatmentPrice);
+            this.groupBox1.Controls.Add(this.txtUpEndTime);
+            this.groupBox1.Controls.Add(this.txtUpStartTime);
+            this.groupBox1.Controls.Add(this.panel4);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.dateTimePickerUpdate);
+            this.groupBox1.Location = new System.Drawing.Point(9, 181);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(472, 302);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Update Information";
+            // 
+            // btnUpClear
+            // 
+            this.btnUpClear.Location = new System.Drawing.Point(277, 251);
+            this.btnUpClear.Name = "btnUpClear";
+            this.btnUpClear.Size = new System.Drawing.Size(189, 37);
+            this.btnUpClear.TabIndex = 28;
+            this.btnUpClear.Text = "Clear";
+            this.btnUpClear.UseVisualStyleBackColor = true;
+            // 
+            // btnUpTreatment
+            // 
+            this.btnUpTreatment.Location = new System.Drawing.Point(305, 28);
+            this.btnUpTreatment.Name = "btnUpTreatment";
+            this.btnUpTreatment.Size = new System.Drawing.Size(134, 36);
+            this.btnUpTreatment.TabIndex = 28;
+            this.btnUpTreatment.Text = "Booking Treatment";
+            this.btnUpTreatment.UseVisualStyleBackColor = true;
+            // 
+            // txtUpAmountDue
+            // 
+            this.txtUpAmountDue.Location = new System.Drawing.Point(100, 190);
+            this.txtUpAmountDue.Name = "txtUpAmountDue";
+            this.txtUpAmountDue.Size = new System.Drawing.Size(155, 20);
+            this.txtUpAmountDue.TabIndex = 26;
+            // 
+            // txtUpTreatmentPrice
+            // 
+            this.txtUpTreatmentPrice.Location = new System.Drawing.Point(100, 155);
+            this.txtUpTreatmentPrice.Name = "txtUpTreatmentPrice";
+            this.txtUpTreatmentPrice.Size = new System.Drawing.Size(155, 20);
+            this.txtUpTreatmentPrice.TabIndex = 25;
+            // 
+            // txtUpEndTime
+            // 
+            this.txtUpEndTime.Location = new System.Drawing.Point(100, 115);
+            this.txtUpEndTime.Name = "txtUpEndTime";
+            this.txtUpEndTime.Size = new System.Drawing.Size(155, 20);
+            this.txtUpEndTime.TabIndex = 24;
+            // 
+            // txtUpStartTime
+            // 
+            this.txtUpStartTime.Location = new System.Drawing.Point(100, 72);
+            this.txtUpStartTime.Name = "txtUpStartTime";
+            this.txtUpStartTime.Size = new System.Drawing.Size(155, 20);
+            this.txtUpStartTime.TabIndex = 22;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.chbUpTreatmentProv);
+            this.panel4.Controls.Add(this.chbUpBookingPayed);
+            this.panel4.Controls.Add(this.chbUpBookingCancelled);
+            this.panel4.Location = new System.Drawing.Point(6, 224);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(249, 72);
+            this.panel4.TabIndex = 21;
+            // 
+            // chbUpTreatmentProv
+            // 
+            this.chbUpTreatmentProv.AutoSize = true;
+            this.chbUpTreatmentProv.Location = new System.Drawing.Point(12, 13);
+            this.chbUpTreatmentProv.Name = "chbUpTreatmentProv";
+            this.chbUpTreatmentProv.Size = new System.Drawing.Size(119, 17);
+            this.chbUpTreatmentProv.TabIndex = 13;
+            this.chbUpTreatmentProv.Text = "Treatment Provided";
+            this.chbUpTreatmentProv.UseVisualStyleBackColor = true;
+            // 
+            // chbUpBookingPayed
+            // 
+            this.chbUpBookingPayed.AutoSize = true;
+            this.chbUpBookingPayed.Location = new System.Drawing.Point(137, 13);
+            this.chbUpBookingPayed.Name = "chbUpBookingPayed";
+            this.chbUpBookingPayed.Size = new System.Drawing.Size(98, 17);
+            this.chbUpBookingPayed.TabIndex = 14;
+            this.chbUpBookingPayed.Text = "Booking Payed";
+            this.chbUpBookingPayed.UseVisualStyleBackColor = true;
+            // 
+            // chbUpBookingCancelled
+            // 
+            this.chbUpBookingCancelled.AutoSize = true;
+            this.chbUpBookingCancelled.Location = new System.Drawing.Point(12, 36);
+            this.chbUpBookingCancelled.Name = "chbUpBookingCancelled";
+            this.chbUpBookingCancelled.Size = new System.Drawing.Size(115, 17);
+            this.chbUpBookingCancelled.TabIndex = 15;
+            this.chbUpBookingCancelled.Text = "Booking Cancelled";
+            this.chbUpBookingCancelled.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 193);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(72, 13);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Amount Due :";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 155);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(88, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Treatment Price :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 115);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "End Time :";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 75);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Start Time :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 28);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(36, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Date :";
+            // 
+            // dateTimePickerUpdate
+            // 
+            this.dateTimePickerUpdate.Location = new System.Drawing.Point(55, 28);
+            this.dateTimePickerUpdate.Name = "dateTimePickerUpdate";
+            this.dateTimePickerUpdate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerUpdate.TabIndex = 0;
+            // 
+            // btnUpdateBooking
+            // 
+            this.btnUpdateBooking.Location = new System.Drawing.Point(487, 185);
+            this.btnUpdateBooking.Name = "btnUpdateBooking";
+            this.btnUpdateBooking.Size = new System.Drawing.Size(92, 292);
+            this.btnUpdateBooking.TabIndex = 23;
+            this.btnUpdateBooking.Text = "Update Booking";
+            this.btnUpdateBooking.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(894, 472);
+            this.tabPage4.Size = new System.Drawing.Size(894, 486);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Delete Bookings";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -580,13 +851,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // Maintain_Bookings
+            // frmMaintainBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 504);
+            this.ClientSize = new System.Drawing.Size(908, 519);
             this.Controls.Add(this.BookingsTabControl);
-            this.Name = "Maintain_Bookings";
+            this.Name = "frmMaintainBookings";
             this.Text = "Maintain_Bookings";
             this.Load += new System.EventHandler(this.Maintain_Bookings_Load);
             this.BookingsTabControl.ResumeLayout(false);
@@ -608,6 +879,14 @@
             this.panel2.PerformLayout();
             this.pnlPage2.ResumeLayout(false);
             this.pnlPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dbGridUpdateBooking)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -634,7 +913,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtTreatmentPrice;
         private System.Windows.Forms.TextBox txtAmountDue;
         private System.Windows.Forms.TextBox txtEndTime;
@@ -665,5 +943,31 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblInfoHeading;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dbGridUpdateBooking;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerUpdate;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtUpStartTime;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.CheckBox chbUpTreatmentProv;
+        private System.Windows.Forms.CheckBox chbUpBookingPayed;
+        private System.Windows.Forms.CheckBox chbUpBookingCancelled;
+        private System.Windows.Forms.Button btnUpdateBooking;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtSearchClientName;
+        private System.Windows.Forms.TextBox txtSearchEmployee;
+        private System.Windows.Forms.TextBox txtUpTreatmentPrice;
+        private System.Windows.Forms.TextBox txtUpEndTime;
+        private System.Windows.Forms.TextBox txtUpAmountDue;
+        private System.Windows.Forms.Button btnUpTreatment;
+        private System.Windows.Forms.Button btnUpdateClear;
+        private System.Windows.Forms.Button btnUpClear;
     }
 }

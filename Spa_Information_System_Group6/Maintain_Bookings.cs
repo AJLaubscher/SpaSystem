@@ -10,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Spa_Information_System_Group6
 {
-    public partial class Maintain_Bookings : Form
+    public partial class frmMaintainBookings : Form
     {
         private static string connectionString = @"Data Source=DESKTOP-2999I1K;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
@@ -26,9 +27,12 @@ namespace Spa_Information_System_Group6
         int fTreatmentId;
         int fClientID;
 
+        string bookingDate;
         bool selectedInformation = false;
 
-        public Maintain_Bookings()
+        int fTotalRows;
+        int fBookingID;
+        public frmMaintainBookings()
         {
             InitializeComponent();
         }
@@ -245,77 +249,48 @@ namespace Spa_Information_System_Group6
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
             decimal treatmentPrice, amountDue;  //All variables declared are used for validation purposes
-            bool invalidDate = false;           //Test whether date is valid or not 
-            bool invalidStartTime = false;
-            bool invalidEndTime = false ;
 
             if(selectedInformation == true)
             {
-                errorProvider1.SetError(txtDate, "");
                 errorProvider1.SetError(txtTreatmentPrice, "");
                 errorProvider1.SetError(txtAmountDue, "");
                 errorProvider1.SetError(txtStartTime, "");
                 errorProvider1.SetError(txtEndTime, "");
 
-                if (txtDate.TextLength == 10)       //Date must be 10 characters
-                {
-                    for (int i = 0; i < txtDate.TextLength; i++)        //Loop through textbox and make sure that only g
+                bookingDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+
+                if (decimal.TryParse(txtTreatmentPrice.Text, out treatmentPrice) == true)
                     {
-                        if (!(Char.IsDigit(txtDate.Text[i])) && !(txtDate.Text[i] == '-') && !(txtDate.Text[i] == '/'))
+                        if (txtStartTime.Text != "")
                         {
-                            invalidDate = true;
-                            break;
-                        }
-
-                    }
-
-
-                    if (invalidDate == false && invalidStartTime == false && invalidEndTime == false)
-                    {
-                        if (decimal.TryParse(txtTreatmentPrice.Text, out treatmentPrice) == true && invalidDate == false)
-                        {
-                            if (txtStartTime.Text != "")
+                            if (txtEndTime.Text == "")
                             {
-                                if (txtEndTime.Text == "")
-                                {
-                                    invalidEndTime = true;
-                                    errorProvider1.SetError(txtEndTime, "Invalid end time");
-                                }
-                                else
-                                {
-                                    if (decimal.TryParse(txtAmountDue.Text, out amountDue))
-                                    {
-                                        //If all Inputs are correct 
-
-                                        addBookings();                  //Add bookings then make every value default again
-                                        resetToDefault();
-                                        
-                                    }
-                                    else
-                                    {
-                                        errorProvider1.SetError(txtAmountDue, "Invalid treatment price entered");
-                                    }
-                                }
+                                errorProvider1.SetError(txtEndTime, "Invalid end time");
                             }
                             else
                             {
-                                errorProvider1.SetError(txtStartTime, "Invalid Start time");
-                                invalidStartTime = true;
+                                if (decimal.TryParse(txtAmountDue.Text, out amountDue))
+                                {
+                                    //If all Inputs are correct 
+
+                                    addBookings();                  //Add bookings then make every value default again
+                                    resetToDefault();
+
+                                }
+                                else
+                                {
+                                    errorProvider1.SetError(txtAmountDue, "Invalid treatment price entered");
+                                }
                             }
                         }
                         else
                         {
-                            errorProvider1.SetError(txtTreatmentPrice, "Invalid treatment price entered");
+                            errorProvider1.SetError(txtStartTime, "Invalid Start time");
                         }
-                    }
-                    else
-                    {
-                        errorProvider1.SetError(txtDate, "Invalid Date entered");
-                    }
                 }
                 else
                 {
-                    errorProvider1.SetError(txtDate, "Invalid Date entered");
+                    errorProvider1.SetError(txtTreatmentPrice, "Invalid treatment price entered");
                 }
             }
             else
@@ -360,7 +335,7 @@ namespace Spa_Information_System_Group6
                     bookingCancelled = false;
                 }
 
-                string sqlInsert = $"INSERT INTO Bookings Values({fClientID}, {fEmpID}, {fTreatmentId}, '{txtDate.Text}', '{txtStartTime.Text}', '{txtEndTime.Text}', {txtTreatmentPrice.Text}, {txtAmountDue.Text}, '{bookingPayed}', '{treatmentProvided}', '{bookingCancelled}')";
+                string sqlInsert = $"INSERT INTO Bookings Values({fClientID}, {fEmpID}, {fTreatmentId}, '{bookingDate}', '{txtStartTime.Text}', '{txtEndTime.Text}', {txtTreatmentPrice.Text}, {txtAmountDue.Text}, '{bookingPayed}', '{treatmentProvided}', '{bookingCancelled}')";
 
                 command = new SqlCommand(sqlInsert, conn);                  
                 adapter = new SqlDataAdapter();
@@ -384,7 +359,7 @@ namespace Spa_Information_System_Group6
             fEmpID = 0;
             fClientID = 0;
             fTreatmentId = 0;
-            txtDate.Clear();
+            dateTimePicker1.Value = DateTime.Now;
             txtEndTime.Clear();
             txtStartTime.Clear();
             txtAmountDue.Clear();
@@ -403,7 +378,156 @@ namespace Spa_Information_System_Group6
 
         private void Maintain_Bookings_Load(object sender, EventArgs e)
         {
+            displayAll();
+        }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            bookingDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+        }
+
+        private void BookingsTabControl_Selected(object sender, TabControlEventArgs e)
+        {
+
+        }
+
+        private void BookingsTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(BookingsTabControl.SelectedIndex == 0)
+            {
+                displayAll();
+            }
+            else if(BookingsTabControl.SelectedIndex == 2)
+            {
+                try
+                {
+                    // open connection
+                    conn.Open();
+                    string sqlQuery = $"SELECT Bookings.Booking_ID, Clients.Name, Treatments.Name, Employees.Employee_Name, " +
+                        $"Bookings.Date_Of_Booking, Bookings.Time_Start, Bookings.Time_End, Bookings.Treatment_Price, Bookings.Amount_Due, Bookings.Booking_Payes, Bookings.Treatment_Provided, Bookings.Booking_Canceled" +
+                        $" FROM Bookings inner join Clients on Bookings.Client_ID  = Clients.Client_ID" +
+                        $" inner join Treatments on Bookings.Treatment_ID = Treatments.Treatment_ID" +
+                        $" inner join Employees on Bookings.Employee_ID = Employees.Employee_ID";
+
+                    command = new SqlCommand(sqlQuery, conn);
+                    adapter = new SqlDataAdapter();
+                    dataSet = new DataSet();
+                    // inner join Treatments on Bookings.Treatment_ID = Treatments.Treatment_ID -- needed
+                    adapter.SelectCommand = command;                                               // set command for adapter
+                    DataTable dt = new DataTable();
+
+                    adapter.Fill(dt);                                               // fill dataset
+
+
+                    // add data to datagrid
+                    dbGridUpdateBooking.DataSource = dt;
+                    dbGridUpdateBooking.Columns[0].HeaderText = "BookingID";
+                    dbGridUpdateBooking.Columns[1].HeaderText = "Client Name";
+                    dbGridUpdateBooking.Columns[2].HeaderText = "Treatment Name";
+                    dbGridUpdateBooking.Columns[3].HeaderText = "Employee Name";
+                    dbGridUpdateBooking.Columns[4].HeaderText = "Date of Booking";
+                    dbGridUpdateBooking.Columns[5].HeaderText = "Start Time";
+                    dbGridUpdateBooking.Columns[6].HeaderText = "End Time";
+                    dbGridUpdateBooking.Columns[7].HeaderText = "Treatment Price";
+                    dbGridUpdateBooking.Columns[8].HeaderText = "Amount Due";
+                    dbGridUpdateBooking.Columns[9].HeaderText = "Booking Payed";
+                    dbGridUpdateBooking.Columns[10].HeaderText = "TreatmentProvided";
+                    dbGridUpdateBooking.Columns[11].HeaderText = "Booking Cancelled";
+
+                    conn.Close();
+                }
+                catch (SqlException error)
+                {
+                    MessageBox.Show(error.Message);                                            
+                }
+
+            }
+        }
+
+        private void dbGridUpdateBooking_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int totalRows = dbGridUpdateBooking.RowCount;  //use total Rows to ensure that the user does not click on empty field
+
+            if (e.RowIndex >= 0)
+            {
+                int index = e.RowIndex;         // get the selected row index
+
+                DataGridViewRow row = this.dbGridUpdateBooking.Rows[index];  // cast collum values of row to variable
+                fTotalRows = totalRows;
+
+                if (index == totalRows - 1)
+                {
+                    MessageBox.Show("Please select a filled record");
+                }
+                else
+                {
+                    fBookingID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
+
+                    try
+                    {
+                        conn.Open();
+
+                        string sqlQuery = $"SELECT * FROM Bookings WHERE Booking_ID = {fBookingID}";
+
+                        command = new SqlCommand(sqlQuery, conn);
+                        SqlDataReader reader;
+                        reader = command.ExecuteReader();
+
+                        while (reader.Read())        // read through eemployee table, and find the employee with given primary key
+                        {
+                            if (fBookingID == (int)reader.GetValue(0))
+                            {
+
+                                if(reader.GetBoolean(9) == true)
+                                {
+                                    chbUpBookingPayed.Checked = true;
+                                }
+                                else
+                                {
+                                    chbUpBookingPayed.Checked= false;
+                                }
+
+                                if(reader.GetBoolean(10) == true)
+                                {
+                                    chbUpTreatmentProv.Checked = true;
+                                }
+                                else
+                                {
+                                    chbUpTreatmentProv.Checked= false;
+                                }
+
+                                if(reader.GetBoolean(11) == true)
+                                {
+                                    chbUpBookingCancelled.Checked = true;
+                                }
+                                else
+                                {
+                                    chbUpBookingCancelled.Checked= false;
+                                }
+
+
+                                dateTimePickerUpdate.Value = (DateTime)reader.GetValue(4);
+                                txtUpStartTime.Text = reader.GetString(5);
+                                txtUpEndTime.Text = reader.GetString(6);
+                                txtUpTreatmentPrice.Text = reader.GetDecimal(7).ToString();
+                                txtUpAmountDue.Text = reader.GetDecimal(8).ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("ID not found");
+                            }
+
+                        }
+
+                        conn.Close();
+                    }
+                    catch (SqlException error)
+                    {
+                        MessageBox.Show(error.Message);
+                    }
+
+                }
+            }
         }
     }
 }

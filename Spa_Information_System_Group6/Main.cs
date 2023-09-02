@@ -52,7 +52,7 @@ namespace Spa_Information_System_Group6
 
         private void btnBookings_Click(object sender, EventArgs e)
         {
-            Maintain_Bookings bookingForm = new Maintain_Bookings();
+            frmMaintainBookings bookingForm = new frmMaintainBookings();
             bookingForm.ShowDialog();
         }
     }
