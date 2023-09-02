@@ -103,7 +103,15 @@
             this.dateTimePickerUpdate = new System.Windows.Forms.DateTimePicker();
             this.btnUpdateBooking = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtSearchBookingDate = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtSearchBookingName = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dataGridDelete = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.BookingsTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbSearch.SuspendLayout();
@@ -121,6 +129,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dbGridUpdateBooking)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,7 +207,7 @@
             // 
             // txtSearchStartTime
             // 
-            this.txtSearchStartTime.Location = new System.Drawing.Point(101, 61);
+            this.txtSearchStartTime.Location = new System.Drawing.Point(116, 61);
             this.txtSearchStartTime.Name = "txtSearchStartTime";
             this.txtSearchStartTime.Size = new System.Drawing.Size(181, 20);
             this.txtSearchStartTime.TabIndex = 3;
@@ -207,13 +218,13 @@
             this.lblStartTimeSearch.AutoSize = true;
             this.lblStartTimeSearch.Location = new System.Drawing.Point(3, 61);
             this.lblStartTimeSearch.Name = "lblStartTimeSearch";
-            this.lblStartTimeSearch.Size = new System.Drawing.Size(92, 13);
+            this.lblStartTimeSearch.Size = new System.Drawing.Size(107, 13);
             this.lblStartTimeSearch.TabIndex = 2;
-            this.lblStartTimeSearch.Text = "Search start time :";
+            this.lblStartTimeSearch.Text = "Search Client Name :";
             // 
             // txtSearchDate
             // 
-            this.txtSearchDate.Location = new System.Drawing.Point(101, 22);
+            this.txtSearchDate.Location = new System.Drawing.Point(116, 22);
             this.txtSearchDate.Name = "txtSearchDate";
             this.txtSearchDate.Size = new System.Drawing.Size(181, 20);
             this.txtSearchDate.TabIndex = 0;
@@ -624,6 +635,7 @@
             this.btnUpdateClear.TabIndex = 27;
             this.btnUpdateClear.Text = "Clear";
             this.btnUpdateClear.UseVisualStyleBackColor = true;
+            this.btnUpdateClear.Click += new System.EventHandler(this.btnUpdateClear_Click);
             // 
             // txtSearchClientName
             // 
@@ -631,6 +643,7 @@
             this.txtSearchClientName.Name = "txtSearchClientName";
             this.txtSearchClientName.Size = new System.Drawing.Size(135, 20);
             this.txtSearchClientName.TabIndex = 26;
+            this.txtSearchClientName.TextChanged += new System.EventHandler(this.txtSearchClientName_TextChanged);
             // 
             // txtSearchEmployee
             // 
@@ -638,6 +651,7 @@
             this.txtSearchEmployee.Name = "txtSearchEmployee";
             this.txtSearchEmployee.Size = new System.Drawing.Size(135, 20);
             this.txtSearchEmployee.TabIndex = 24;
+            this.txtSearchEmployee.TextChanged += new System.EventHandler(this.txtSearchEmployee_TextChanged);
             // 
             // label18
             // 
@@ -697,6 +711,7 @@
             this.btnUpClear.TabIndex = 28;
             this.btnUpClear.Text = "Clear";
             this.btnUpClear.UseVisualStyleBackColor = true;
+            this.btnUpClear.Click += new System.EventHandler(this.btnUpClear_Click);
             // 
             // btnUpTreatment
             // 
@@ -706,6 +721,7 @@
             this.btnUpTreatment.TabIndex = 28;
             this.btnUpTreatment.Text = "Booking Treatment";
             this.btnUpTreatment.UseVisualStyleBackColor = true;
+            this.btnUpTreatment.Click += new System.EventHandler(this.btnUpTreatment_Click);
             // 
             // txtUpAmountDue
             // 
@@ -836,9 +852,13 @@
             this.btnUpdateBooking.TabIndex = 23;
             this.btnUpdateBooking.Text = "Update Booking";
             this.btnUpdateBooking.UseVisualStyleBackColor = true;
+            this.btnUpdateBooking.Click += new System.EventHandler(this.btnUpdateBooking_Click);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Controls.Add(this.dataGridDelete);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -847,9 +867,86 @@
             this.tabPage4.Text = "Delete Bookings";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 375);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(883, 36);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Delete Booking";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.txtSearchBookingDate);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.txtSearchBookingName);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Location = new System.Drawing.Point(6, 222);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(882, 147);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Search";
+            // 
+            // txtSearchBookingDate
+            // 
+            this.txtSearchBookingDate.Location = new System.Drawing.Point(119, 83);
+            this.txtSearchBookingDate.Name = "txtSearchBookingDate";
+            this.txtSearchBookingDate.Size = new System.Drawing.Size(145, 20);
+            this.txtSearchBookingDate.TabIndex = 3;
+            this.txtSearchBookingDate.TextChanged += new System.EventHandler(this.txtSearchBookingDate_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 86);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 13);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Date of booking:";
+            // 
+            // txtSearchBookingName
+            // 
+            this.txtSearchBookingName.Location = new System.Drawing.Point(119, 34);
+            this.txtSearchBookingName.Name = "txtSearchBookingName";
+            this.txtSearchBookingName.Size = new System.Drawing.Size(145, 20);
+            this.txtSearchBookingName.TabIndex = 1;
+            this.txtSearchBookingName.TextChanged += new System.EventHandler(this.txtSearchBookingName_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 34);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 13);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Client Name :";
+            // 
+            // dataGridDelete
+            // 
+            this.dataGridDelete.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDelete.Location = new System.Drawing.Point(6, 6);
+            this.dataGridDelete.Name = "dataGridDelete";
+            this.dataGridDelete.Size = new System.Drawing.Size(882, 210);
+            this.dataGridDelete.TabIndex = 0;
+            this.dataGridDelete.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridDelete_CellClick);
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(290, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Clear Controls";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmMaintainBookings
             // 
@@ -887,6 +984,10 @@
             this.groupBox1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -905,8 +1006,6 @@
         private System.Windows.Forms.TextBox txtSearchDate;
         private System.Windows.Forms.Label lblSearchDate;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtSearchStartTime;
-        private System.Windows.Forms.Label lblStartTimeSearch;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -969,5 +1068,15 @@
         private System.Windows.Forms.Button btnUpTreatment;
         private System.Windows.Forms.Button btnUpdateClear;
         private System.Windows.Forms.Button btnUpClear;
+        private System.Windows.Forms.TextBox txtSearchStartTime;
+        private System.Windows.Forms.Label lblStartTimeSearch;
+        private System.Windows.Forms.DataGridView dataGridDelete;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtSearchBookingName;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtSearchBookingDate;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button2;
     }
 }
