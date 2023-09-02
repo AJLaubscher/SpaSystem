@@ -190,12 +190,21 @@ namespace Spa_Information_System_Group6
 
         private void tabControlTreatments_SelectedIndexChanged(object sender, EventArgs e)  // call when index of tab changes
         {
-            displayAll();                       // datagrid on viewAll tab
-            populateComboBox();                 // combobox on view all tab
-            displayAllUpdate();                 // datagrid on update tab
-            populateComboBoxUpd();              // combobox update tab
-            displayAllDelete();                 // datagrid delete tab
-            populateComboBoxDlT();              // combobox delete tab
+            if(tabControlTreatments.SelectedIndex == 0)
+            {
+                displayAll(); // datagrid on viewAll tab
+                populateComboBox(); // combobox on view all tab
+            }
+            else if(tabControlTreatments.SelectedIndex == 2)
+            {
+                displayAllUpdate();                 // datagrid on update tab
+                populateComboBoxUpd();              // combobox update tab
+            }
+            if(tabControlTreatments.SelectedIndex == 3)
+            {
+                displayAllDelete();                 // datagrid delete tab
+                populateComboBoxDlT();              // combobox delete tab
+            }
         }
 
         private void textBoxSearchTreatments_TextChanged(object sender, EventArgs e)   // search according to treatment name on view all tab

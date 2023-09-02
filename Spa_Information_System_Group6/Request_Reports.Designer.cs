@@ -195,7 +195,7 @@
             this.btnGenerateTop10.Name = "btnGenerateTop10";
             this.btnGenerateTop10.Size = new System.Drawing.Size(728, 41);
             this.btnGenerateTop10.TabIndex = 11;
-            this.btnGenerateTop10.Text = "Display income per time period";
+            this.btnGenerateTop10.Text = "Generate Top 10 Treatments per Time Period";
             this.btnGenerateTop10.UseVisualStyleBackColor = true;
             this.btnGenerateTop10.Click += new System.EventHandler(this.btnGenerateTop10_Click);
             // 

@@ -537,9 +537,21 @@ namespace Spa_Information_System_Group6
 
         private void tabControlTreatments_SelectedIndexChanged(object sender, EventArgs e)
         {
-            displayAll();                       // datagrid on viewAll tab
-            displayAllUpdate();                 // datagrid on update tab
-            displayAllDelete();                 // datagrid delete tab
+            if(tabControlTreatments.SelectedIndex == 0)
+            {
+                displayAll();                       // datagrid on viewAll tab
+            }
+            if(tabControlTreatments.SelectedIndex == 2)
+            {
+                displayAllUpdate();                 // datagrid on update tab
+            }
+            if(tabControlTreatments.SelectedIndex == 3)
+            {
+                displayAllDelete();                 // datagrid delete tab
+            }
+            
+            
+            
         }
 
         private void Maintain_Clients_Load(object sender, EventArgs e)
