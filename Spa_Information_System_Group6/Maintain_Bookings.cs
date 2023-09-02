@@ -852,7 +852,7 @@ namespace Spa_Information_System_Group6
             }
             else
             {
-                MessageBox.Show("Please select a record before deletinga record");
+                MessageBox.Show("Please select a record before deleting");
             }
         }
 
