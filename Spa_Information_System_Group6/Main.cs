@@ -28,6 +28,8 @@ namespace Spa_Information_System_Group6
             {
                 btnTreatments.Visible = true;
                 btnEmployees.Visible = true;
+                btnBookings.Visible = true;
+                BtnReports.Visible = true;
             }
         }
 
@@ -55,6 +57,12 @@ namespace Spa_Information_System_Group6
             Request_Reports newReport = new Request_Reports();
             //this.Hide();
             newReport.ShowDialog();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            MaintainEmployees maintainEmployees = new MaintainEmployees();
+            maintainEmployees.ShowDialog();
         }
     }
 }

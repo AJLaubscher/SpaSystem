@@ -47,6 +47,7 @@ namespace Spa_Information_System_Group6
             this.btnEmployees.Text = "Employee Manager";
             this.btnEmployees.UseVisualStyleBackColor = true;
             this.btnEmployees.Visible = false;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // btnTreatments
             // 
@@ -96,6 +97,7 @@ namespace Spa_Information_System_Group6
             this.BtnReports.TabIndex = 5;
             this.BtnReports.Text = "Reports Manager";
             this.BtnReports.UseVisualStyleBackColor = true;
+            this.BtnReports.Visible = false;
             this.BtnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
             // btnExit

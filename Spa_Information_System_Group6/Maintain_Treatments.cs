@@ -14,7 +14,7 @@ namespace Spa_Information_System_Group6
     public partial class Maintain_Treatments : Form
     {
         // Global sql connection
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-NSKM73HE\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlCommand command;
         SqlDataAdapter adapt;
         DataSet ds;
@@ -563,39 +563,56 @@ namespace Spa_Information_System_Group6
         // selects record, populate labels to indicate selected field and pass Primary key ID to the variable used to update the record
         private void dataGridViewDelete_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int totalRows = dataGridViewDelete.RowCount;
+
             if (e.RowIndex >= 0)
             {
                 int index = e.RowIndex;         // get the selected row index
 
                 DataGridViewRow row = this.dataGridViewDelete.Rows[index];  // cast collum values of row to variable
 
+                if (index == totalRows - 1)
+                {
+                    MessageBox.Show("Please selecte a filled record");
+                }
+                else
+                {
+                    treat_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
 
-                treat_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
-
-                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
-                lblType_Del.Text = row.Cells[1].Value.ToString();
-                lblName_Del.Text = row.Cells[2].Value.ToString();
-                lblPrice_Del.Text = row.Cells[3].Value.ToString();
-                lblDur_Del.Text = row.Cells[4].Value.ToString();
+                    // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                    lblType_Del.Text = row.Cells[1].Value.ToString();
+                    lblName_Del.Text = row.Cells[2].Value.ToString();
+                    lblPrice_Del.Text = row.Cells[3].Value.ToString();
+                    lblDur_Del.Text = row.Cells[4].Value.ToString();
+                }
             }
         }
 
         private void dGrdViewUptTreat_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.RowIndex >= 0)
             {
+                int totalRows = dGrdViewUptTreat.RowCount;
+
                 int index = e.RowIndex;         // get the selected row index
 
                 DataGridViewRow row = this.dGrdViewUptTreat.Rows[index];  // cast collum values of row to variable
 
+                if (index == totalRows - 1)
+                {
+                    MessageBox.Show("Please selecte a filled record");
+                }
+                else
+                {
+                    treat_update_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
 
-                treat_update_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
-
-                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
-                lblType.Text = row.Cells[1].Value.ToString();
-                txbxName.Text = row.Cells[2].Value.ToString();
-                txbxPrice.Text = row.Cells[3].Value.ToString();
-                txbxDuration.Text = row.Cells[4].Value.ToString();
+                    // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                    lblType.Text = row.Cells[1].Value.ToString();
+                    txbxName.Text = row.Cells[2].Value.ToString();
+                    txbxPrice.Text = row.Cells[3].Value.ToString();
+                    txbxDuration.Text = row.Cells[4].Value.ToString();
+                }
             }
         }
     }

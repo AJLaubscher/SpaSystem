@@ -15,7 +15,7 @@ namespace Spa_Information_System_Group6
 {
     public partial class Maintain_Clients : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-NSKM73HE\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlCommand command;
         SqlDataAdapter adapt;
         DataSet ds;
@@ -288,26 +288,37 @@ namespace Spa_Information_System_Group6
 
         private void dgvDeleteClients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
+            int totalRows = dgvDeleteClients.RowCount;
             if (e.RowIndex >= 0)
             {
                 int index = e.RowIndex;         // get the selected row index
 
                 DataGridViewRow row = this.dgvDeleteClients.Rows[index];  // cast collum values of row to variable
 
+                if (index == totalRows - 1)
+                {
+                    MessageBox.Show("Please selecte a filled record");
+                }
+                else
+                {
+                    client_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
 
-                client_delete_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
+                    // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                    lblClientNameDelete.Text = row.Cells[1].Value.ToString();
+                    lblClientSurnameDelete.Text = row.Cells[2].Value.ToString();
+                    lblClientDateOfBirthDelete.Text = row.Cells[3].Value.ToString();
+                    lblClientCellNumberDelete.Text = row.Cells[4].Value.ToString();
+                    lblClientMedicalConditionDelete.Text = row.Cells[5].Value.ToString();
+                }
 
-                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
-                lblClientNameDelete.Text = row.Cells[1].Value.ToString();
-                lblClientSurnameDelete.Text = row.Cells[2].Value.ToString();
-                lblClientDateOfBirthDelete.Text = row.Cells[3].Value.ToString();
-                lblClientCellNumberDelete.Text = row.Cells[4].Value.ToString();
-                lblClientMedicalConditionDelete.Text = row.Cells[5].Value.ToString();
             }
         }
 
         private void dgvUpdateClients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int totalRows = dgvUpdateClients.RowCount;
+
             if (e.RowIndex >= 0)
             {
                 int index = e.RowIndex;         // get the selected row index
@@ -315,21 +326,30 @@ namespace Spa_Information_System_Group6
                 DataGridViewRow row = this.dgvUpdateClients.Rows[index];  // cast collum values of row to variable
 
 
-                client_update_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
-
-                // retieve values from selected row by specifying the cell index and display in textboxes to be edited
-                edtNameClient.Text = row.Cells[1].Value.ToString();
-                edtSurnameClient.Text = row.Cells[2].Value.ToString();
-                lblDateOfBirthClient.Text = row.Cells[3].Value.ToString();
-                edtCellNumberClient.Text = row.Cells[4].Value.ToString();
-                if (row.Cells[5].Value.ToString() == "True")
+                if (index == totalRows - 1)
                 {
-                    cbxMedicalCondition.Checked = true;
+                    MessageBox.Show("Please selecte a filled record");
                 }
                 else
                 {
-                    cbxMedicalCondition.Checked = false;
+                    client_update_ID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value from the datagrid selected record
+
+                    // retieve values from selected row by specifying the cell index and display in textboxes to be edited
+                    edtNameClient.Text = row.Cells[1].Value.ToString();
+                    edtSurnameClient.Text = row.Cells[2].Value.ToString();
+                    lblDateOfBirthClient.Text = row.Cells[3].Value.ToString();
+                    edtCellNumberClient.Text = row.Cells[4].Value.ToString();
+                    if (row.Cells[5].Value.ToString() == "True")
+                    {
+                        cbxMedicalCondition.Checked = true;
+                    }
+                    else
+                    {
+                        cbxMedicalCondition.Checked = false;
+                    }
                 }
+
+
             }
         }
 

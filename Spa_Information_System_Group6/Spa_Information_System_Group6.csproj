@@ -58,6 +58,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintainEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainEmployees.Designer.cs">
+      <DependentUpon>MaintainEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintain_Clients.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,11 +84,20 @@
     <Compile Include="Request_Reports.Designer.cs">
       <DependentUpon>Request_Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchClientReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchClientReport.Designer.cs">
+      <DependentUpon>SearchClientReport.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainEmployees.resx">
+      <DependentUpon>MaintainEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintain_Clients.resx">
       <DependentUpon>Maintain_Clients.cs</DependentUpon>
@@ -101,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Request_Reports.resx">
       <DependentUpon>Request_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchClientReport.resx">
+      <DependentUpon>SearchClientReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
