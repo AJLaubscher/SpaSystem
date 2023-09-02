@@ -133,6 +133,7 @@ namespace Spa_Information_System_Group6
                 if (index == totalRows - 1)
                 {
                     MessageBox.Show("Please select a filled record");
+                    bClientClick = false;
                 }
                 else
                 {
@@ -158,6 +159,7 @@ namespace Spa_Information_System_Group6
                 if (index == totalRows - 1)
                 {
                     MessageBox.Show("Please select a filled record");
+                    bTreatmentClick = false;
                 }
                 else
                 {
@@ -181,6 +183,7 @@ namespace Spa_Information_System_Group6
                 if (index == totalRows - 1)
                 {
                     MessageBox.Show("Please select a filled record");
+                    bEmployeeClick = false;
                 }
                 else
                 {
