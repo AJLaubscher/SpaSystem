@@ -980,5 +980,11 @@ namespace Spa_Information_System_Group6
             txtSearchBookingDate.Clear();
             txtSearchBookingName.Clear();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help helpMe = new Help();
+            helpMe.Show();
+        }
     }
 }

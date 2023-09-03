@@ -575,5 +575,11 @@ namespace Spa_Information_System_Group6
                 medical_condition = false;
             }
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help helpMe = new Help();
+            helpMe.Show();
+        }
     }
 }

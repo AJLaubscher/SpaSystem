@@ -68,6 +68,7 @@ namespace Spa_Information_System_Group6
             this.btnShowEmp = new System.Windows.Forms.Button();
             this.lblEmpHeading = new System.Windows.Forms.Label();
             this.errorProviderEmployees = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnHelp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dbEmp)).BeginInit();
             this.gbDelete.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dbDelete)).BeginInit();
@@ -450,11 +451,22 @@ namespace Spa_Information_System_Group6
             // 
             this.errorProviderEmployees.ContainerControl = this;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(1260, 9);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 34;
+            this.btnHelp.Text = "Help?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // MaintainEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1363, 1068);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.dbEmp);
             this.Controls.Add(this.gbDelete);
             this.Controls.Add(this.gbShowAll);
@@ -517,5 +529,6 @@ namespace Spa_Information_System_Group6
         private System.Windows.Forms.Button btnShowEmp;
         private System.Windows.Forms.Label lblEmpHeading;
         private System.Windows.Forms.ErrorProvider errorProviderEmployees;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

@@ -57,6 +57,7 @@
             this.lblCell = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,7 +72,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 36);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(776, 426);
@@ -349,11 +350,22 @@
             this.lblName.TabIndex = 3;
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(690, 6);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 8;
+            this.btnHelp.Text = "Help?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // Request_Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 475);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.tabControl1);
             this.Name = "Request_Reports";
             this.Text = "Request_Reports";
@@ -402,5 +414,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnGenerate;
         private System.Windows.Forms.ListBox listClients;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

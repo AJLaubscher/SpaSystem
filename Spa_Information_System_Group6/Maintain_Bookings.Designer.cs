@@ -108,6 +108,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridDelete = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnHelp = new System.Windows.Forms.Button();
             this.BookingsTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbSearch.SuspendLayout();
@@ -147,7 +148,7 @@
             this.BookingsTabControl.Controls.Add(this.tabPage2);
             this.BookingsTabControl.Controls.Add(this.tabPage3);
             this.BookingsTabControl.Controls.Add(this.tabPage4);
-            this.BookingsTabControl.Location = new System.Drawing.Point(3, -5);
+            this.BookingsTabControl.Location = new System.Drawing.Point(3, 22);
             this.BookingsTabControl.Multiline = true;
             this.BookingsTabControl.Name = "BookingsTabControl";
             this.BookingsTabControl.SelectedIndex = 0;
@@ -910,11 +911,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(806, 2);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 8;
+            this.btnHelp.Text = "Help?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // frmMaintainBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(908, 519);
+            this.ClientSize = new System.Drawing.Size(908, 541);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.BookingsTabControl);
             this.Name = "frmMaintainBookings";
             this.Text = "Maintain_Bookings";
@@ -1036,5 +1048,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblPriceUpdates;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

@@ -549,5 +549,11 @@ namespace Spa_Information_System_Group6
         {
             this.Close();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help helpMe = new Help();
+            helpMe.Show();
+        }
     }
 }

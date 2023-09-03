@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvAllClients = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.cbxAddClientMedicalCondition = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.edtAddClientName = new System.Windows.Forms.TextBox();
@@ -58,6 +60,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.edtSurnameClient = new System.Windows.Forms.TextBox();
+            this.cbxMedicalCondition = new System.Windows.Forms.CheckBox();
             this.lblDateOfBirthClient = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.btnUpdateClient = new System.Windows.Forms.Button();
@@ -88,10 +92,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.lblDateOfBirth = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.cbxMedicalCondition = new System.Windows.Forms.CheckBox();
-            this.edtSurnameClient = new System.Windows.Forms.TextBox();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.tabControlTreatments.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBoxSearchTreatments.SuspendLayout();
@@ -113,7 +114,7 @@
             this.tabControlTreatments.Controls.Add(this.tabPage2);
             this.tabControlTreatments.Controls.Add(this.tabPage3);
             this.tabControlTreatments.Controls.Add(this.tabPage4);
-            this.tabControlTreatments.Location = new System.Drawing.Point(1, 2);
+            this.tabControlTreatments.Location = new System.Drawing.Point(1, 27);
             this.tabControlTreatments.Name = "tabControlTreatments";
             this.tabControlTreatments.SelectedIndex = 0;
             this.tabControlTreatments.Size = new System.Drawing.Size(798, 446);
@@ -239,6 +240,22 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Client";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(356, 142);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 14;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDateOfBirth.Location = new System.Drawing.Point(356, 188);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(162, 24);
+            this.lblDateOfBirth.TabIndex = 13;
             // 
             // cbxAddClientMedicalCondition
             // 
@@ -426,6 +443,25 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update";
+            // 
+            // edtSurnameClient
+            // 
+            this.edtSurnameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.edtSurnameClient.Location = new System.Drawing.Point(23, 92);
+            this.edtSurnameClient.Name = "edtSurnameClient";
+            this.edtSurnameClient.Size = new System.Drawing.Size(154, 26);
+            this.edtSurnameClient.TabIndex = 17;
+            // 
+            // cbxMedicalCondition
+            // 
+            this.cbxMedicalCondition.AutoSize = true;
+            this.cbxMedicalCondition.Location = new System.Drawing.Point(289, 127);
+            this.cbxMedicalCondition.Name = "cbxMedicalCondition";
+            this.cbxMedicalCondition.Size = new System.Drawing.Size(130, 17);
+            this.cbxMedicalCondition.TabIndex = 16;
+            this.cbxMedicalCondition.Text = "Has medical condition";
+            this.cbxMedicalCondition.UseVisualStyleBackColor = true;
+            this.cbxMedicalCondition.CheckedChanged += new System.EventHandler(this.cbxMedicalCondition_CheckedChanged);
             // 
             // lblDateOfBirthClient
             // 
@@ -743,46 +779,22 @@
             this.label19.TabIndex = 5;
             this.label19.Text = "Client Cell Number:";
             // 
-            // lblDateOfBirth
+            // btnHelp
             // 
-            this.lblDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(356, 188);
-            this.lblDateOfBirth.Name = "lblDateOfBirth";
-            this.lblDateOfBirth.Size = new System.Drawing.Size(162, 24);
-            this.lblDateOfBirth.TabIndex = 13;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(356, 142);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 14;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // cbxMedicalCondition
-            // 
-            this.cbxMedicalCondition.AutoSize = true;
-            this.cbxMedicalCondition.Location = new System.Drawing.Point(289, 127);
-            this.cbxMedicalCondition.Name = "cbxMedicalCondition";
-            this.cbxMedicalCondition.Size = new System.Drawing.Size(130, 17);
-            this.cbxMedicalCondition.TabIndex = 16;
-            this.cbxMedicalCondition.Text = "Has medical condition";
-            this.cbxMedicalCondition.UseVisualStyleBackColor = true;
-            this.cbxMedicalCondition.CheckedChanged += new System.EventHandler(this.cbxMedicalCondition_CheckedChanged);
-            // 
-            // edtSurnameClient
-            // 
-            this.edtSurnameClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edtSurnameClient.Location = new System.Drawing.Point(23, 92);
-            this.edtSurnameClient.Name = "edtSurnameClient";
-            this.edtSurnameClient.Size = new System.Drawing.Size(154, 26);
-            this.edtSurnameClient.TabIndex = 17;
+            this.btnHelp.Location = new System.Drawing.Point(701, 5);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 8;
+            this.btnHelp.Text = "Help?";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // Maintain_Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 483);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.tabControlTreatments);
             this.Name = "Maintain_Clients";
             this.Text = "Maintain_Clients";
@@ -876,5 +888,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox cbxMedicalCondition;
         private System.Windows.Forms.TextBox edtSurnameClient;
+        private System.Windows.Forms.Button btnHelp;
     }
 }
