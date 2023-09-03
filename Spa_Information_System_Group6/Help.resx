@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="listBox1.Items" xml:space="preserve">
+    <value>Step 3: In the case where you decide to delete a specific Employee, first search for the Username of that Employee; secondly click the Delete Employee button to delete the specific Employee from the Employees Database. In the case </value>
+  </data>
+  <data name="listBox1.Items1" xml:space="preserve">
+    <value>Step 4: A message box will appear to confirm if you want to Delete the specific employee or all of the Employees. If the Employee(s) record(s) has been successfully deleted by updating the Deleted field of that specific </value>
+  </data>
+  <data name="listBox1.Items2" xml:space="preserve">
+    <value>Step 2: Select the Select Information Button to open a new page to select the Client, the treatment, and the Employee for the booking by using the search controls and clicking add Information button to confirm the information. The selected information will display in the information selected group box.</value>
+  </data>
 </root>

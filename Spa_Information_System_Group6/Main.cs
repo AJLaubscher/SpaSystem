@@ -70,5 +70,11 @@ namespace Spa_Information_System_Group6
             frmMaintainBookings form = new frmMaintainBookings();
             form.ShowDialog();
         }
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            Help helpMe = new Help();
+            helpMe.Show();
+        }
     }
 }

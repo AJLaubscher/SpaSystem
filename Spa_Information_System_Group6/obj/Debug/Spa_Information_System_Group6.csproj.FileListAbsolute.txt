@@ -51,3 +51,4 @@ C:\Users\Chris\source\repos\SpaSystem\Spa_Information_System_Group6\obj\Debug\Sp
 C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.frmBookingInformationAdd.resources
 C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.frmUpdateTreatmentInfo.resources
 C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.frmMaintainBookings.resources
+C:\Users\Andre\Documents\BSc IT\Second Semester\CMPG223\SpaSystem\Spa_Information_System_Group6\obj\Debug\Spa_Information_System_Group6.Help.resources
