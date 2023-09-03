@@ -391,7 +391,7 @@ namespace Spa_Information_System_Group6
             }
             else if(BookingsTabControl.SelectedIndex == 3)
             {
-                
+                displayDeleteDataGrid();
             }
         }
 
@@ -629,6 +629,7 @@ namespace Spa_Information_System_Group6
                         txtUpEndTime.Clear();
                         txtUpStartTime.Clear();
                         dateTimePickerUpdate.Value = DateTime.Now;
+                        lblPriceUpdates.Text = "";
 
                         displayBookings();          //Display The dbGrid with the updated value
                     }

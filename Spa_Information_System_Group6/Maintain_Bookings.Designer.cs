@@ -147,7 +147,7 @@
             this.BookingsTabControl.Controls.Add(this.tabPage2);
             this.BookingsTabControl.Controls.Add(this.tabPage3);
             this.BookingsTabControl.Controls.Add(this.tabPage4);
-            this.BookingsTabControl.Location = new System.Drawing.Point(3, 3);
+            this.BookingsTabControl.Location = new System.Drawing.Point(3, -5);
             this.BookingsTabControl.Multiline = true;
             this.BookingsTabControl.Name = "BookingsTabControl";
             this.BookingsTabControl.SelectedIndex = 0;
