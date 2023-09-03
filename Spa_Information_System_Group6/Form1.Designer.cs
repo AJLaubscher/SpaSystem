@@ -103,6 +103,7 @@ namespace Spa_Information_System_Group6
             this.Controls.Add(this.UsernameLbl);
             this.Name = "LogIn";
             this.Text = "Log In";
+            this.Load += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
