@@ -59,7 +59,7 @@ namespace Spa_Information_System_Group6
             {
                 conn.Open();
 
-                string sqlQuery = $"SELECT SUM(Amount_Due) AS TotalIncome FROM Bookings WHERE Date_Of_Booking BETWEEN '{dtStartDate.Value}' AND '{dtEndDate.Value}'";      // compile select query, Deleted Like '{0}' to only show records that have not been deleted
+                string sqlQuery = $"SELECT SUM(Amount_Due) AS TotalIncome FROM Bookings WHERE Date_Of_Booking BETWEEN '{dtStartDate.Value}' AND '{dtEndDate.Value}' AND Booking_Canceled = {0} AND Booking_Payes = '{1}'";      // compile select query, Deleted Like '{0}' to only show records that have not been deleted
 
                 command = new SqlCommand(sqlQuery, conn);
 
