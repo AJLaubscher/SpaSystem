@@ -64,5 +64,11 @@ namespace Spa_Information_System_Group6
             MaintainEmployees maintainEmployees = new MaintainEmployees();
             maintainEmployees.ShowDialog();
         }
+
+        private void btnBookings_Click(object sender, EventArgs e)
+        {
+            frmMaintainBookings form = new frmMaintainBookings();
+            form.ShowDialog();
+        }
     }
 }

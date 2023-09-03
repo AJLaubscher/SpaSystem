@@ -357,6 +357,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Request_Reports";
             this.Text = "Request_Reports";
+            this.Load += new System.EventHandler(this.Request_Reports_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

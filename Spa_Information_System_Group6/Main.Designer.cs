@@ -78,6 +78,7 @@ namespace Spa_Information_System_Group6
             this.btnBookings.TabIndex = 1;
             this.btnBookings.Text = "Booking Manager";
             this.btnBookings.UseVisualStyleBackColor = true;
+            this.btnBookings.Click += new System.EventHandler(this.btnBookings_Click);
             // 
             // label1
             // 
@@ -114,7 +115,7 @@ namespace Spa_Information_System_Group6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 537);
+            this.ClientSize = new System.Drawing.Size(577, 537);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.BtnReports);
             this.Controls.Add(this.label1);
