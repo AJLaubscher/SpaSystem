@@ -165,7 +165,7 @@ namespace Spa_Information_System_Group6
                 }
                 else
                 {
-                    fTreatmentPrice = double.Parse(row.Cells[0].Value.ToString());
+                    fTreatmentPrice = double.Parse(row.Cells[3].Value.ToString());
                     treatmentID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
                     bTreatmentClick = true;
                 }

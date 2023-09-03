@@ -39,6 +39,7 @@ namespace Spa_Information_System_Group6
         int updateBookingID;
         int updateTreatmentID;
         bool selectedUpdateRecord;
+        decimal updatePrice;
 
         //Delete
         int deleteBookingID;
@@ -587,6 +588,8 @@ namespace Spa_Information_System_Group6
                 if (myfrmUpdateTreatmentInfo.bTreatmentClick == true)
                 {
                     updateTreatmentID = myfrmUpdateTreatmentInfo.treatmentID;
+                    updatePrice = Math.Round(myfrmUpdateTreatmentInfo.treatmentPrice,2); //myfrmUpdateTreatmentInfo.treatmentPrice;
+                    lblPriceUpdates.Text = updatePrice.ToString();
                 }
             }
             else
@@ -678,8 +681,10 @@ namespace Spa_Information_System_Group6
                     bookingCanceled = false;
                 }
 
+                double convertPrice = double.Parse(lblPriceUpdates.Text);
+
                 string sqlUpdate = $"UPDATE Bookings SET Treatment_ID = {updateTreatmentID}, Date_Of_Booking = '{dateTimePickerUpdate.Value}', Time_Start = '{txtUpStartTime.Text}'" +
-                   $", Time_End = '{txtUpEndTime.Text}', Treatment_price = '{lblPriceUpdates.Text}', Amount_Due = '{lblPriceUpdates.Text}', Booking_Payes = '{bookingPayed}', Treatment_Provided = '{treatmentProvided}', Booking_Canceled = '{bookingCanceled}'" +
+                   $", Time_End = '{txtUpEndTime.Text}', Treatment_price = '{convertPrice}', Amount_Due = '{convertPrice}', Booking_Payes = '{bookingPayed}', Treatment_Provided = '{treatmentProvided}', Booking_Canceled = '{bookingCanceled}'" +
                    $" WHERE Booking_ID = {updateBookingID}";
 
                 command = new SqlCommand(sqlUpdate, conn);

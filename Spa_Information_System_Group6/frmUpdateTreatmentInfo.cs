@@ -24,6 +24,7 @@ namespace Spa_Information_System_Group6
         int treatmentRowIndex;
         int fTotalRows;
         public int treatmentID;
+        public decimal treatmentPrice;
         public frmUpdateTreatmentInfo()
         {
             InitializeComponent();
@@ -152,6 +153,7 @@ namespace Spa_Information_System_Group6
                 else
                 {
                     treatmentID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
+                    treatmentPrice = decimal.Parse(row.Cells[3].Value.ToString());
                     bTreatmentClick = true;
                 }
             }
