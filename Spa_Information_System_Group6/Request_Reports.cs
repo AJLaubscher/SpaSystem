@@ -13,7 +13,7 @@ namespace Spa_Information_System_Group6
 {
     public partial class Request_Reports : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-2999I1K;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False");
+        SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlCommand command;
         SqlDataAdapter adapt;
         DataSet ds;
