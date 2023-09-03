@@ -30,6 +30,7 @@ namespace Spa_Information_System_Group6
         int fClientID;
         double fPrice;
 
+        DateTime date;
         string bookingDate;
         bool selectedInformation = false;
 
@@ -261,7 +262,8 @@ namespace Spa_Information_System_Group6
                 errorProvider1.SetError(txtStartTime, "");
                 errorProvider1.SetError(txtEndTime, "");
 
-                bookingDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                //bookingDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                date = dateTimePicker1.Value;
 
                 if (txtStartTime.Text != "")
                 {
@@ -324,7 +326,7 @@ namespace Spa_Information_System_Group6
                     bookingCancelled = false;
                 }
 
-                string sqlInsert = $"INSERT INTO Bookings Values({fClientID}, {fEmpID}, {fTreatmentId}, '{bookingDate}', '{txtStartTime.Text}', '{txtEndTime.Text}', '{lblPrice.Text}', '{lblPrice.Text}', '{bookingPayed}', '{treatmentProvided}', '{bookingCancelled}')";
+                string sqlInsert = $"INSERT INTO Bookings Values({fClientID}, {fEmpID}, {fTreatmentId}, '{date}', '{txtStartTime.Text}', '{txtEndTime.Text}', '{lblPrice.Text}', '{lblPrice.Text}', '{bookingPayed}', '{treatmentProvided}', '{bookingCancelled}')";
 
                 command = new SqlCommand(sqlInsert, conn);
                 adapter = new SqlDataAdapter();

@@ -98,7 +98,7 @@ namespace Spa_Information_System_Group6
             this.gbDelete.Controls.Add(this.button1);
             this.gbDelete.Controls.Add(this.label3);
             this.gbDelete.Controls.Add(this.txtDelUsername);
-            this.gbDelete.Location = new System.Drawing.Point(222, 101);
+            this.gbDelete.Location = new System.Drawing.Point(234, 92);
             this.gbDelete.Name = "gbDelete";
             this.gbDelete.Size = new System.Drawing.Size(556, 450);
             this.gbDelete.TabIndex = 32;
@@ -180,7 +180,7 @@ namespace Spa_Information_System_Group6
             this.gbAdd.Controls.Add(this.txtCell);
             this.gbAdd.Controls.Add(this.txtSurname);
             this.gbAdd.Controls.Add(this.txtName);
-            this.gbAdd.Location = new System.Drawing.Point(0, 0);
+            this.gbAdd.Location = new System.Drawing.Point(228, 101);
             this.gbAdd.Name = "gbAdd";
             this.gbAdd.Size = new System.Drawing.Size(563, 447);
             this.gbAdd.TabIndex = 31;
@@ -348,7 +348,6 @@ namespace Spa_Information_System_Group6
             // 
             this.gbShowAll.Controls.Add(this.dbEmployees);
             this.gbShowAll.Controls.Add(this.lblListOfEmployees);
-            this.gbShowAll.Controls.Add(this.gbAdd);
             this.gbShowAll.Location = new System.Drawing.Point(228, 101);
             this.gbShowAll.Name = "gbShowAll";
             this.gbShowAll.Size = new System.Drawing.Size(556, 447);
@@ -465,9 +464,10 @@ namespace Spa_Information_System_Group6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1363, 1068);
+            this.ClientSize = new System.Drawing.Size(1363, 566);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.dbEmp);
+            this.Controls.Add(this.gbAdd);
             this.Controls.Add(this.gbDelete);
             this.Controls.Add(this.gbShowAll);
             this.Controls.Add(this.pnlManipulateEmp);

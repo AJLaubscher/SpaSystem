@@ -30,7 +30,7 @@ namespace Spa_Information_System_Group6
             {
                 // open connection
                 conn.Open();
-                string sqlDisplayQuery = $"SELECT Booking_ID, Date_Of_Booking, Amount_Due, Booking_Payes FROM Bookings";
+                string sqlDisplayQuery = $"SELECT Booking_ID, Date_Of_Booking, Amount_Due, Booking_Payes FROM Bookings WHERE Date_Of_Booking BETWEEN '{dtStartDate.Value}' AND '{dtEndDate.Value}' AND Booking_Canceled = {0}";
 
                 command = new SqlCommand(sqlDisplayQuery, conn);
 
@@ -89,6 +89,7 @@ namespace Spa_Information_System_Group6
             try
             {
                 DateTime date = DateTime.Today;
+                
 
                 conn.Open();
                 string sqlQuery = $"SELECT Employees.Employee_Name, Clients.Name, Treatments.Name, Bookings.Time_Start FROM Employees, Clients, Treatments, Bookings WHERE Bookings.Employee_ID = Employees.Employee_ID AND Bookings.Client_ID = Clients.Client_ID AND Bookings.Treatment_ID = Treatments.Treatment_ID AND Bookings.Date_Of_Booking = '{date}' AND Bookings.Booking_Canceled = '{0}' ORDER BY Bookings.Time_Start";
@@ -104,7 +105,26 @@ namespace Spa_Information_System_Group6
 
                 while (reader.Read()) //Use while loop
                 {
-                    listBoxSchedule.Items.Add(reader.GetValue(0) + "\t\t\t" +reader.GetValue(1) + "\t\t\t" + reader.GetValue(2) + "\t\t\t" + reader.GetValue(3)); //Display database table values in listbox
+                    string value1 = reader.GetValue(0).ToString();
+                    string value2 = reader.GetValue(1).ToString();
+                    string value3 = reader.GetValue(2).ToString();
+                    string value4 = reader.GetValue(3).ToString();
+
+                    // Set the maximum widths for each column
+                    int maxColumn1Width = 30;
+                    int maxColumn2Width = 30;
+                    int maxColumn3Width = 30;
+                    int maxColumn4Width = 15;
+
+                    // Truncate or pad values to ensure they fit within their respective maximum widths
+                    value1 = value1.Length <= maxColumn1Width ? value1.PadRight(maxColumn1Width) : value1.Substring(0, maxColumn1Width);
+                    value2 = value2.Length <= maxColumn2Width ? value2.PadRight(maxColumn2Width) : value2.Substring(0, maxColumn2Width);
+                    value3 = value3.Length <= maxColumn3Width ? value3.PadRight(maxColumn3Width) : value3.Substring(0, maxColumn3Width);
+                    value4 = value4.Length <= maxColumn4Width ? value4.PadRight(maxColumn4Width) : value4.Substring(0, maxColumn4Width);
+
+                    listBoxSchedule.Items.Add($"{value1}\t{value2}\t{value3}\t{value4}");
+
+                    //listBoxSchedule.Items.Add(reader.GetValue(0) + "\t\t\t" +reader.GetValue(1) + "\t\t\t" + reader.GetValue(2) + "\t\t\t" + reader.GetValue(3)); //Display database table values in listbox
                 }
 
                 conn.Close();
@@ -128,7 +148,7 @@ namespace Spa_Information_System_Group6
                 command = new SqlCommand(sqlQuery, conn);
 
                 reader = command.ExecuteReader();
-
+                //lstTop10.Font = new Font("Courier New", 10);
                 lstTop10.Items.Clear(); //Clear listbox
                 lstTop10.Items.Add("Top 10 treatments between: ");
                 lstTop10.Items.Add("");
@@ -140,10 +160,18 @@ namespace Spa_Information_System_Group6
                 lstTop10.Items.Add("\nTreatment Name\t\t\tType of Treatment\t");
                 lstTop10.Items.Add("=====================================================================================");
                 lstTop10.Items.Add("");
+                
 
                 while (reader.Read()) //Use while loop
                 {
-                    lstTop10.Items.Add(reader.GetValue(0) + "\t\t\t\t" + reader.GetValue(1)); //Display database table values in listbox
+                    string value1 = reader.GetValue(0).ToString();
+                    string value2 = reader.GetValue(1).ToString();
+
+                    // Truncate or pad value1 to ensure it has a maximum length of 25 characters
+                    value1 = value1.Length <= 25 ? value1.PadRight(25) : value1.Substring(0, 25);
+
+                    lstTop10.Items.Add($"{value1}\t{value2}");
+
                 }
 
 
@@ -188,14 +216,32 @@ namespace Spa_Information_System_Group6
                 listClients.Items.Add("");
                 listClients.Items.Add("Report Generated on:" + DateTime.Now.ToString("dd-MM-yyyy"));
                 listClients.Items.Add("");
-                listClients.Items.Add("\nTreatment Name\t\t\tType of Treatment\t\t\tBooking Date");
+                listClients.Items.Add("\nTreatment Name\t\t\tType of Treatment\t\tBooking Date");
                 listClients.Items.Add("=====================================================================================");
                 listClients.Items.Add("");
 
                 while (reader.Read()) //Use while loop
                 {
                     DateTime date = reader.GetDateTime(2);
-                    listClients.Items.Add(reader.GetValue(0) + "\t\t\t\t" + reader.GetValue(1) + "\t\t\t\t" + date.ToString("dd-MM-yyyy")); //Display database table values in listbox
+
+                    string value1 = reader.GetValue(0).ToString();
+                    string value2 = reader.GetValue(1).ToString();
+                    string value3 = date.ToString("dd-MM-yyyy");
+  
+
+                    // Set the maximum widths for each column
+                    int maxColumn1Width = 40;
+                    int maxColumn2Width = 30;
+                    int maxColumn3Width = 30;
+
+                    // Truncate or pad values to ensure they fit within their respective maximum widths
+                    value1 = value1.Length <= maxColumn1Width ? value1.PadRight(maxColumn1Width) : value1.Substring(0, maxColumn1Width);
+                    value2 = value2.Length <= maxColumn2Width ? value2.PadRight(maxColumn2Width) : value2.Substring(0, maxColumn2Width);
+                    value3 = value3.Length <= maxColumn3Width ? value3.PadRight(maxColumn3Width) : value3.Substring(0, maxColumn3Width);
+
+
+                    listClients.Items.Add($"{value1}\t{value2}\t{value3}");
+
                 }
                 lblCell.Text = "";
                 lblName.Text = "";
