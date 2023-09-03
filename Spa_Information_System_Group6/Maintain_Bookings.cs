@@ -594,15 +594,23 @@ namespace Spa_Information_System_Group6
 
         private void btnUpTreatment_Click(object sender, EventArgs e)
         {
-            frmUpdateTreatmentInfo myfrmUpdateTreatmentInfo = new frmUpdateTreatmentInfo();
-            myfrmUpdateTreatmentInfo.ShowDialog();
-
-            fTreatmentId = myfrmUpdateTreatmentInfo.treatmentID;
-
-            if (myfrmUpdateTreatmentInfo.bTreatmentClick == true)
+            if (selectedUpdateRecord == true)
             {
-                updateTreatmentID = myfrmUpdateTreatmentInfo.treatmentID;
+                frmUpdateTreatmentInfo myfrmUpdateTreatmentInfo = new frmUpdateTreatmentInfo();
+                myfrmUpdateTreatmentInfo.ShowDialog();
+
+                fTreatmentId = myfrmUpdateTreatmentInfo.treatmentID;
+
+                if (myfrmUpdateTreatmentInfo.bTreatmentClick == true)
+                {
+                    updateTreatmentID = myfrmUpdateTreatmentInfo.treatmentID;
+                }
             }
+            else
+            {
+                MessageBox.Show("Select A Booking first before selecting a treatment to be updated");
+            }
+
 
         }
 
