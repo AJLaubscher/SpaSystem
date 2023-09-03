@@ -28,6 +28,7 @@ namespace Spa_Information_System_Group6
         int fEmpID;
         int fTreatmentId;
         int fClientID;
+        double fPrice;
 
         string bookingDate;
         bool selectedInformation = false;
@@ -138,6 +139,7 @@ namespace Spa_Information_System_Group6
             fClientID = myFrmBookingAdd.clientID;
             fEmpID = myFrmBookingAdd.empID;
             fTreatmentId = myFrmBookingAdd.treatmentID;
+            fPrice = myFrmBookingAdd.fTreatmentPrice;
 
             displayEmployeeInformation(fEmpID);
             displayClientInformation(fClientID);
@@ -242,6 +244,7 @@ namespace Spa_Information_System_Group6
                 }
 
                 conn.Close();
+                lblPrice.Text = fPrice.ToString();
             }
             catch (SqlException error)
             {
@@ -251,49 +254,31 @@ namespace Spa_Information_System_Group6
 
         private void btnAddBooking_Click(object sender, EventArgs e)
         {
-            decimal treatmentPrice, amountDue;  //All variables declared are used for validation purposes
 
             if (selectedInformation == true)
             {
-                errorProvider1.SetError(txtTreatmentPrice, "");
-                errorProvider1.SetError(txtAmountDue, "");
                 errorProvider1.SetError(txtStartTime, "");
                 errorProvider1.SetError(txtEndTime, "");
 
                 bookingDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
 
-                if (decimal.TryParse(txtTreatmentPrice.Text, out treatmentPrice) == true)
+                if (txtStartTime.Text != "")
                 {
-                    if (txtStartTime.Text != "")
+                    if (txtEndTime.Text == "")
                     {
-                        if (txtEndTime.Text == "")
-                        {
-                            errorProvider1.SetError(txtEndTime, "Invalid end time");
-                        }
-                        else
-                        {
-                            if (decimal.TryParse(txtAmountDue.Text, out amountDue))
-                            {
-                                //If all Inputs are correct 
-
-                                addBookings();                  //Add bookings then make every value default again
-                                resetToDefault();
-
-                            }
-                            else
-                            {
-                                errorProvider1.SetError(txtAmountDue, "Invalid treatment price entered");
-                            }
-                        }
+                        errorProvider1.SetError(txtEndTime, "Invalid end time");
                     }
                     else
                     {
-                        errorProvider1.SetError(txtStartTime, "Invalid Start time");
+                        //If all Inputs are correct 
+
+                        addBookings();                  //Add bookings then make every value default again
+                        resetToDefault();
                     }
                 }
                 else
                 {
-                    errorProvider1.SetError(txtTreatmentPrice, "Invalid treatment price entered");
+                    errorProvider1.SetError(txtStartTime, "Invalid Start time");
                 }
             }
             else
@@ -338,7 +323,7 @@ namespace Spa_Information_System_Group6
                     bookingCancelled = false;
                 }
 
-                string sqlInsert = $"INSERT INTO Bookings Values({fClientID}, {fEmpID}, {fTreatmentId}, '{bookingDate}', '{txtStartTime.Text}', '{txtEndTime.Text}', {txtTreatmentPrice.Text}, {txtAmountDue.Text}, '{bookingPayed}', '{treatmentProvided}', '{bookingCancelled}')";
+                string sqlInsert = $"INSERT INTO Bookings Values({fClientID}, {fEmpID}, {fTreatmentId}, '{bookingDate}', '{txtStartTime.Text}', '{txtEndTime.Text}', '{lblPrice.Text}', '{lblPrice.Text}', '{bookingPayed}', '{treatmentProvided}', '{bookingCancelled}')";
 
                 command = new SqlCommand(sqlInsert, conn);
                 adapter = new SqlDataAdapter();
@@ -365,11 +350,10 @@ namespace Spa_Information_System_Group6
             dateTimePicker1.Value = DateTime.Now;
             txtEndTime.Clear();
             txtStartTime.Clear();
-            txtAmountDue.Clear();
             chbCancelled.Checked = false;
             chbPayed.Checked = false;
             chbTreatmentProv.Checked = false;
-            txtTreatmentPrice.Clear();
+            lblPrice.Text = "";
 
             txtAddClientSurname.Clear();
             txtAddClientName.Clear();
@@ -478,8 +462,7 @@ namespace Spa_Information_System_Group6
                                 dateTimePickerUpdate.Value = (DateTime)reader.GetValue(4);
                                 txtUpStartTime.Text = reader.GetString(5);
                                 txtUpEndTime.Text = reader.GetString(6);
-                                txtUpTreatmentPrice.Text = reader.GetDecimal(7).ToString();
-                                txtUpAmountDue.Text = reader.GetDecimal(8).ToString();
+                                lblPriceUpdates.Text = reader.GetDecimal(7).ToString();
                             }
                             else
                             {
@@ -616,59 +599,40 @@ namespace Spa_Information_System_Group6
 
         private void btnUpdateBooking_Click(object sender, EventArgs e)
         {
-            decimal treatmentPrice, amountDue;  //All variables declared are used for validation purposes
 
             if (selectedUpdateRecord == true)
             {
-                errorProvider1.SetError(txtUpTreatmentPrice, "");
-                errorProvider1.SetError(txtUpAmountDue, "");
                 errorProvider1.SetError(txtUpStartTime, "");
                 errorProvider1.SetError(txtUpEndTime, "");
 
                 bookingDate = dateTimePickerUpdate.Value.ToString("dd-MM-yyyy");
 
-                if (decimal.TryParse(txtUpTreatmentPrice.Text, out treatmentPrice) == true)
+                if (txtUpStartTime.Text != "")
                 {
-                    if (txtUpStartTime.Text != "")
+                    if (txtUpEndTime.Text == "")
                     {
-                        if (txtUpEndTime.Text == "")
-                        {
-                            errorProvider1.SetError(txtEndTime, "Invalid end time");
-                        }
-                        else
-                        {
-                            if (decimal.TryParse(txtUpAmountDue.Text, out amountDue))
-                            {
-                                //If all Inputs are correct 
-
-                                updateBookings();                  //Add bookings then make every value default again
-
-
-                                //reset controls
-                                updateBookingID = 0;
-                                selectedUpdateRecord = false;
-                                txtUpAmountDue.Clear();
-                                txtUpEndTime.Clear();
-                                txtUpStartTime.Clear();
-                                txtUpTreatmentPrice.Clear();
-                                dateTimePickerUpdate.Value = DateTime.Now;
-
-                                displayBookings();          //Display The dbGrid with the updated value
-                            }
-                            else
-                            {
-                                errorProvider1.SetError(txtAmountDue, "Invalid treatment price entered");
-                            }
-                        }
+                        errorProvider1.SetError(txtEndTime, "Invalid end time");
                     }
                     else
                     {
-                        errorProvider1.SetError(txtUpStartTime, "Invalid Start time");
+                        //If all Inputs are correct 
+
+                        updateBookings();                  //Add bookings then make every value default again
+
+
+                        //reset controls
+                        updateBookingID = 0;
+                        selectedUpdateRecord = false;
+                        txtUpEndTime.Clear();
+                        txtUpStartTime.Clear();
+                        dateTimePickerUpdate.Value = DateTime.Now;
+
+                        displayBookings();          //Display The dbGrid with the updated value
                     }
                 }
                 else
                 {
-                    errorProvider1.SetError(txtUpTreatmentPrice, "Invalid treatment price entered");
+                    errorProvider1.SetError(txtUpStartTime, "Invalid Start time");
                 }
             }
             else
@@ -715,7 +679,7 @@ namespace Spa_Information_System_Group6
                 }
 
                 string sqlUpdate = $"UPDATE Bookings SET Treatment_ID = {updateTreatmentID}, Date_Of_Booking = '{dateTimePickerUpdate.Value}', Time_Start = '{txtUpStartTime.Text}'" +
-                   $", Time_End = '{txtUpEndTime.Text}', Treatment_price = {txtUpTreatmentPrice.Text}, Amount_Due = {txtUpAmountDue.Text}, Booking_Payes = '{bookingPayed}', Treatment_Provided = '{treatmentProvided}', Booking_Canceled = '{bookingCanceled}'" +
+                   $", Time_End = '{txtUpEndTime.Text}', Treatment_price = '{lblPriceUpdates.Text}', Amount_Due = '{lblPriceUpdates.Text}', Booking_Payes = '{bookingPayed}', Treatment_Provided = '{treatmentProvided}', Booking_Canceled = '{bookingCanceled}'" +
                    $" WHERE Booking_ID = {updateBookingID}";
 
                 command = new SqlCommand(sqlUpdate, conn);
@@ -770,10 +734,8 @@ namespace Spa_Information_System_Group6
 
         private void btnUpClear_Click(object sender, EventArgs e)
         {
-            txtUpAmountDue.Clear();
             txtUpEndTime.Clear();
             txtUpStartTime.Clear();
-            txtUpTreatmentPrice.Clear();
             dateTimePickerUpdate.Value = DateTime.Now;
         }
 

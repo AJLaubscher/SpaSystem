@@ -61,6 +61,7 @@
             this.btnAddBooking = new System.Windows.Forms.Button();
             this.lblHeading = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btnSelectInformation = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,9 +73,6 @@
             this.chbCancelled = new System.Windows.Forms.CheckBox();
             this.txtEndTime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtAmountDue = new System.Windows.Forms.TextBox();
-            this.txtTreatmentPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -85,17 +83,15 @@
             this.label17 = new System.Windows.Forms.Label();
             this.dbGridUpdateBooking = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPriceUpdates = new System.Windows.Forms.Label();
             this.btnUpClear = new System.Windows.Forms.Button();
             this.btnUpTreatment = new System.Windows.Forms.Button();
-            this.txtUpAmountDue = new System.Windows.Forms.TextBox();
-            this.txtUpTreatmentPrice = new System.Windows.Forms.TextBox();
             this.txtUpEndTime = new System.Windows.Forms.TextBox();
             this.txtUpStartTime = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.chbUpTreatmentProv = new System.Windows.Forms.CheckBox();
             this.chbUpBookingPayed = new System.Windows.Forms.CheckBox();
             this.chbUpBookingCancelled = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -105,13 +101,13 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.txtSearchBookingDate = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtSearchBookingName = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridDelete = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             this.BookingsTabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.gbSearch.SuspendLayout();
@@ -446,6 +442,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblPrice);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.btnSelectInformation);
             this.panel2.Controls.Add(this.label1);
@@ -454,14 +451,20 @@
             this.panel2.Controls.Add(this.pnlPage2);
             this.panel2.Controls.Add(this.txtEndTime);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.txtAmountDue);
-            this.panel2.Controls.Add(this.txtTreatmentPrice);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(19, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(464, 346);
             this.panel2.TabIndex = 22;
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPrice.Location = new System.Drawing.Point(117, 141);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(164, 24);
+            this.lblPrice.TabIndex = 22;
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dateTimePicker1
             // 
@@ -565,31 +568,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "End Time :";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 181);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Amount_Due :";
-            // 
-            // txtAmountDue
-            // 
-            this.txtAmountDue.Location = new System.Drawing.Point(117, 178);
-            this.txtAmountDue.Multiline = true;
-            this.txtAmountDue.Name = "txtAmountDue";
-            this.txtAmountDue.Size = new System.Drawing.Size(164, 24);
-            this.txtAmountDue.TabIndex = 12;
-            // 
-            // txtTreatmentPrice
-            // 
-            this.txtTreatmentPrice.Location = new System.Drawing.Point(117, 139);
-            this.txtTreatmentPrice.Multiline = true;
-            this.txtTreatmentPrice.Name = "txtTreatmentPrice";
-            this.txtTreatmentPrice.Size = new System.Drawing.Size(164, 24);
-            this.txtTreatmentPrice.TabIndex = 11;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -683,14 +661,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPriceUpdates);
             this.groupBox1.Controls.Add(this.btnUpClear);
             this.groupBox1.Controls.Add(this.btnUpTreatment);
-            this.groupBox1.Controls.Add(this.txtUpAmountDue);
-            this.groupBox1.Controls.Add(this.txtUpTreatmentPrice);
             this.groupBox1.Controls.Add(this.txtUpEndTime);
             this.groupBox1.Controls.Add(this.txtUpStartTime);
             this.groupBox1.Controls.Add(this.panel4);
-            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
@@ -702,6 +678,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Update Information";
+            // 
+            // lblPriceUpdates
+            // 
+            this.lblPriceUpdates.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPriceUpdates.Location = new System.Drawing.Point(100, 149);
+            this.lblPriceUpdates.Name = "lblPriceUpdates";
+            this.lblPriceUpdates.Size = new System.Drawing.Size(164, 24);
+            this.lblPriceUpdates.TabIndex = 29;
+            this.lblPriceUpdates.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnUpClear
             // 
@@ -722,20 +707,6 @@
             this.btnUpTreatment.Text = "Booking Treatment";
             this.btnUpTreatment.UseVisualStyleBackColor = true;
             this.btnUpTreatment.Click += new System.EventHandler(this.btnUpTreatment_Click);
-            // 
-            // txtUpAmountDue
-            // 
-            this.txtUpAmountDue.Location = new System.Drawing.Point(100, 190);
-            this.txtUpAmountDue.Name = "txtUpAmountDue";
-            this.txtUpAmountDue.Size = new System.Drawing.Size(155, 20);
-            this.txtUpAmountDue.TabIndex = 26;
-            // 
-            // txtUpTreatmentPrice
-            // 
-            this.txtUpTreatmentPrice.Location = new System.Drawing.Point(100, 155);
-            this.txtUpTreatmentPrice.Name = "txtUpTreatmentPrice";
-            this.txtUpTreatmentPrice.Size = new System.Drawing.Size(155, 20);
-            this.txtUpTreatmentPrice.TabIndex = 25;
             // 
             // txtUpEndTime
             // 
@@ -791,15 +762,6 @@
             this.chbUpBookingCancelled.TabIndex = 15;
             this.chbUpBookingCancelled.Text = "Booking Cancelled";
             this.chbUpBookingCancelled.UseVisualStyleBackColor = true;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 193);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 13);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Amount Due :";
             // 
             // label15
             // 
@@ -891,6 +853,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Search";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(290, 34);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(148, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Clear Controls";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // txtSearchBookingDate
             // 
             this.txtSearchBookingDate.Location = new System.Drawing.Point(119, 83);
@@ -937,16 +909,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(290, 34);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Clear Controls";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmMaintainBookings
             // 
@@ -1007,13 +969,10 @@
         private System.Windows.Forms.Label lblSearchDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTreatmentPrice;
-        private System.Windows.Forms.TextBox txtAmountDue;
         private System.Windows.Forms.TextBox txtEndTime;
         private System.Windows.Forms.TextBox txtStartTime;
         private System.Windows.Forms.CheckBox chbPayed;
@@ -1048,7 +1007,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dateTimePickerUpdate;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -1062,9 +1020,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtSearchClientName;
         private System.Windows.Forms.TextBox txtSearchEmployee;
-        private System.Windows.Forms.TextBox txtUpTreatmentPrice;
         private System.Windows.Forms.TextBox txtUpEndTime;
-        private System.Windows.Forms.TextBox txtUpAmountDue;
         private System.Windows.Forms.Button btnUpTreatment;
         private System.Windows.Forms.Button btnUpdateClear;
         private System.Windows.Forms.Button btnUpClear;
@@ -1078,5 +1034,7 @@
         private System.Windows.Forms.TextBox txtSearchBookingDate;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.Label lblPriceUpdates;
     }
 }

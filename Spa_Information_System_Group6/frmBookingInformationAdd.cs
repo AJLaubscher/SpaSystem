@@ -17,6 +17,7 @@ namespace Spa_Information_System_Group6
         public int empID;           //public variables holding the primary key of the selected records in the datagridView
         public int treatmentID;
         public int clientID;
+        public double fTreatmentPrice;
 
         SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlCommand command;
@@ -164,6 +165,7 @@ namespace Spa_Information_System_Group6
                 }
                 else
                 {
+                    fTreatmentPrice = double.Parse(row.Cells[0].Value.ToString());
                     treatmentID = int.Parse(row.Cells[0].Value.ToString());   // retrieve primary key value
                     bTreatmentClick = true;
                 }

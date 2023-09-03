@@ -15,9 +15,10 @@ namespace Spa_Information_System_Group6
     {
         SqlConnection conn = new SqlConnection(@"Data Source=MSI\SQLSERVER;Initial Catalog=SpaDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         SqlCommand command;
-        SqlDataAdapter adapt;
         DataSet ds;
         SqlDataReader reader;
+
+
         public Request_Reports()
         {
             InitializeComponent();
